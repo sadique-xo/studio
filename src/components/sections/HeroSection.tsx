@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export default function HeroSection() {
 
   return (
-    <section className="relative w-full bg-background text-foreground py-24 md:py-32">
+    <section className="relative w-full text-foreground py-24 md:py-32 dotted-background">
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
         <div className="container px-4">
           <h1 className="font-headline text-4xl font-bold md:text-6xl lg:text-7xl text-primary">

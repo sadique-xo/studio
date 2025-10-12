@@ -74,3 +74,11 @@ h6 {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .dotted-background {
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(hsl(var(--muted)) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+}
