@@ -15,38 +15,26 @@ export default function CustomCursor() {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const onMouseEnter = (e: MouseEvent) => {
-      if (e.target instanceof Element) {
-         if (
-          e.target.matches(
-            'a, button, [role="button"], input[type="submit"], .cursor-pointer'
-          )
-        ) {
-          setIsHovering(true);
-        }
+    const handleMouseOver = (e: MouseEvent) => {
+      if (e.target instanceof Element && e.target.closest('a, button, [role="button"], .cursor-pointer')) {
+        setIsHovering(true);
       }
     };
 
-    const onMouseLeave = (e: MouseEvent) => {
-       if (e.target instanceof Element) {
-         if (
-          e.target.matches(
-            'a, button, [role="button"], input[type="submit"], .cursor-pointer'
-          )
-        ) {
-          setIsHovering(false);
-        }
-       }
+    const handleMouseOut = (e: MouseEvent) => {
+      if (e.target instanceof Element && e.target.closest('a, button, [role="button"], .cursor-pointer')) {
+        setIsHovering(false);
+      }
     };
     
     document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseover", onMouseEnter);
-    document.addEventListener("mouseout", onMouseLeave);
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseout", handleMouseOut);
 
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseover", onMouseEnter);
-      document.removeEventListener("mouseout", onMouseLeave);
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseout", handleMouseOut);
     };
   }, []);
 
