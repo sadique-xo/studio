@@ -32,8 +32,8 @@ export default function ProjectCard({ project, fullWidth = false }: ProjectCardP
       <CardContent className="relative z-10 flex flex-col items-start justify-end flex-grow p-8 md:p-12 h-96">
         <h3 className="font-headline text-3xl md:text-4xl font-bold">{project.title}</h3>
         <p className="mt-2 text-lg text-white/80 max-w-lg">{project.shortDescription}</p>
-        <Button variant="secondary" className="mt-4">
-            View Project
+        <Button variant="secondary" asChild className="mt-4">
+            <Link href={`/projects/${project.slug}`}>View Project</Link>
         </Button>
       </CardContent>
     </Card>
