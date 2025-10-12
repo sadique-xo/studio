@@ -1,48 +1,41 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Project } from '@/lib/types';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ArrowRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from './ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { cn } from '@/lib/utils';
 
 interface ProjectCardProps {
   project: Project;
+  fullWidth?: boolean;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, fullWidth = false }: ProjectCardProps) {
     const projectImage = PlaceHolderImages.find(img => img.imageUrl === project.coverImage);
 
   return (
-    <Card className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-      <Link href={`/projects/${project.slug}`} className="flex flex-col h-full">
-        <CardHeader className="p-0">
-          <div className="relative h-60 w-full">
-            <Image
-              src={project.coverImage}
-              alt={project.title}
-              fill
-              className="object-cover"
-              data-ai-hint={projectImage?.imageHint || 'modern architecture'}
-            />
-          </div>
-        </CardHeader>
-        <CardContent className="flex-grow p-6">
-          <CardTitle className="font-headline text-2xl mb-2">{project.title}</CardTitle>
-          <p className="text-muted-foreground">{project.shortDescription}</p>
-        </CardContent>
-        <CardFooter className="p-6 pt-0 flex justify-between items-center">
-          <div className="flex flex-wrap gap-2">
-            {project.tags.slice(0, 2).map((tag) => (
-              <Badge key={tag} variant="secondary">{tag}</Badge>
-            ))}
-          </div>
-          <div className="flex items-center text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-            <span className="mr-1 text-sm">View</span>
-            <ArrowRight className="h-4 w-4" />
-          </div>
-        </CardFooter>
+    <Card className={cn(
+        "group relative flex flex-col overflow-hidden text-white border-0 rounded-none",
+        fullWidth ? "md:col-span-2" : "md:col-span-1"
+    )}>
+      <Link href={`/projects/${project.slug}`} className="absolute inset-0">
+        <Image
+          src={project.coverImage}
+          alt={project.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          data-ai-hint={projectImage?.imageHint || 'modern architecture'}
+        />
+        <div className="absolute inset-0 bg-black/50" />
       </Link>
+      <CardContent className="relative z-10 flex flex-col items-start justify-end flex-grow p-8 md:p-12 h-96">
+        <h3 className="font-headline text-3xl md:text-4xl font-bold">{project.title}</h3>
+        <p className="mt-2 text-lg text-white/80 max-w-lg">{project.shortDescription}</p>
+        <Button variant="secondary" className="mt-4">
+            View Project
+        </Button>
+      </CardContent>
     </Card>
   );
 }
