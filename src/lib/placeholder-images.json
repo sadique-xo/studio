@@ -15,8 +15,8 @@
     {
       "id": "project-1-cover",
       "description": "Cover image for Project 1",
-      "imageUrl": "https://picsum.photos/seed/101/1200/800",
-      "imageHint": "luxury villa"
+      "imageUrl": "https://picsum.photos/seed/111/1200/800",
+      "imageHint": "hill station homestay"
     },
     {
       "id": "project-1-gallery-1",
