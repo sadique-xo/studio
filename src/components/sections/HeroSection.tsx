@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 export default function HeroSection() {
 
   return (
-    <section className="relative h-screen w-full bg-background text-foreground">
+    <section className="relative w-full bg-background text-foreground py-24 md:py-32">
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
         <div className="container px-4">
           <h1 className="font-headline text-4xl font-bold md:text-6xl lg:text-7xl text-primary">
@@ -14,10 +14,10 @@ export default function HeroSection() {
             I help real-estate owners, Airbnb hosts, and rental managers design clean, credible websites that attract bookings — without the stress.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg">
+            <Button asChild size="lg" variant="default">
               <Link href="/contact">Book Free Consultation</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="secondary">
               <Link href="/#portfolio">See Portfolio</Link>
             </Button>
           </div>
