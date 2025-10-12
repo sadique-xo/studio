@@ -9,7 +9,7 @@ export default function PortfolioSection() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
-            Featured Projects
+            Trusted by boutique stays, real-estate agents, and modern rental hosts.
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             A glimpse into our passion for creating exceptional digital experiences.

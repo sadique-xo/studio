@@ -4,8 +4,8 @@ import { PlaceHolderImages } from './placeholder-images';
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
 
 export const siteSettings: SiteSettings = {
-  title: 'Sadique.co',
-  tagline: 'Web Design for Premium Real Estate & Airbnb',
+  title: 'sadique.co',
+  tagline: 'Where your property finds its digital home.',
   contactEmail: 'hello@sadique.co',
   socialLinks: {
     twitter: '#',
@@ -62,9 +62,9 @@ export const projects: Project[] = [
 export const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Jane Doe',
-    role: 'Real Estate Developer',
-    quote: 'Sadique.co transformed our online presence. Their attention to detail and understanding of the luxury market is unmatched. Our bookings have increased by 40% since the new site launch.',
+    name: 'Anjali S.',
+    role: 'EcoStay Owner',
+    quote: 'Sadique transformed our Airbnb page into a stunning website that doubled our bookings in three months.',
     avatarUrl: getImage('testimonial-avatar-1'),
     sourceLink: '#',
     createdAt: new Date('2023-06-01'),
