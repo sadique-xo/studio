@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 export default function HeroSection() {
 
   return (
-    <section className="relative w-full text-foreground flex items-center justify-center h-[calc(100vh-8rem)]">
+    <section className={cn("relative w-full text-foreground flex items-center justify-center min-h-[50vh]")}>
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
         <div className="container px-4">
           <h1 className="font-headline text-4xl font-bold md:text-6xl lg:text-7xl text-primary">
