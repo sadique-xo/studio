@@ -4,9 +4,16 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 export default function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [targetProps, setTargetProps] = useState({
+    width: 24,
+    height: 24,
+    borderRadius: '50%',
+    x: -100,
+    y: -100,
+  });
 
   useEffect(() => {
     setIsClient(true);
@@ -16,13 +23,27 @@ export default function CustomCursor() {
     };
 
     const handleMouseOver = (e: MouseEvent) => {
-      if (e.target instanceof Element && e.target.closest('a, button, [role="button"], .cursor-pointer')) {
+      const target = e.target as HTMLElement;
+      const interactiveElement = target.closest('a, button, [role="button"], input, textarea, select, .cursor-pointer');
+      
+      if (interactiveElement) {
+        const rect = interactiveElement.getBoundingClientRect();
+        const styles = window.getComputedStyle(interactiveElement);
+        setTargetProps({
+          width: rect.width,
+          height: rect.height,
+          borderRadius: styles.borderRadius,
+          x: rect.left,
+          y: rect.top,
+        });
         setIsHovering(true);
       }
     };
 
     const handleMouseOut = (e: MouseEvent) => {
-      if (e.target instanceof Element && e.target.closest('a, button, [role="button"], .cursor-pointer')) {
+       const target = e.target as HTMLElement;
+       const interactiveElement = target.closest('a, button, [role="button"], input, textarea, select, .cursor-pointer');
+      if (interactiveElement) {
         setIsHovering(false);
       }
     };
@@ -41,18 +62,25 @@ export default function CustomCursor() {
   if (!isClient) {
     return null;
   }
+  
+  const cursorSize = isHovering ? targetProps.width : 24;
+  const cursorHeight = isHovering ? targetProps.height : 24;
+  const cursorX = isHovering ? targetProps.x : position.x - cursorSize / 2;
+  const cursorY = isHovering ? targetProps.y : position.y - cursorHeight / 2;
+
 
   return (
     <div
       className={cn(
-        "hidden md:block fixed w-6 h-6 rounded-full pointer-events-none z-[9999] transition-transform duration-200 ease-out",
-        "bg-foreground/50",
-        isHovering ? "scale-150 opacity-75" : ""
+        "hidden md:block fixed rounded-full pointer-events-none z-[9999]",
+        "bg-foreground/50 transition-[width,height,border-radius,transform,opacity] duration-200 ease-out",
+        isHovering ? "opacity-75" : ""
       )}
       style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        transform: `translate(-50%, -50%) scale(${isHovering ? 1.5 : 1})`,
+        width: `${cursorSize}px`,
+        height: `${cursorHeight}px`,
+        borderRadius: isHovering ? targetProps.borderRadius : '50%',
+        transform: `translate(${cursorX}px, ${cursorY}px)`,
       }}
     />
   );

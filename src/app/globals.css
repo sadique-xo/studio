@@ -70,12 +70,11 @@ h6 {
   * {
     @apply border-border;
   }
+  body, a, button, [role='button'], input, textarea, select {
+    cursor: none;
+  }
   body {
     @apply bg-background text-foreground;
-  }
-
-  body, a, button, [role='button'] {
-    cursor: none;
   }
 }
 
