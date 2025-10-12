@@ -31,20 +31,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("font-body antialiased", fontHeadline.variable, fontBody.variable)}>
+      <body className={cn("font-body antialiased flex flex-col min-h-screen", fontHeadline.variable, fontBody.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">
               {children}
             </main>
             <Footer />
-          </div>
           <Toaster />
         </ThemeProvider>
       </body>
