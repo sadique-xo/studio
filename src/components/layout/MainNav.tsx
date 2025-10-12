@@ -20,8 +20,8 @@ export default function MainNav({ isMobile = false, onLinkClick }: MainNavProps)
   const pathname = usePathname();
 
   const navClass = cn(
-    'flex gap-6',
-    isMobile && 'flex-col gap-4 text-lg'
+    'flex gap-6 items-center',
+    isMobile && 'flex-col gap-4 text-lg items-start'
   );
 
   const linkClass = (href: string) => cn(
