@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Logo from './Logo';
 import MainNav from './MainNav';
+import { ThemeToggle } from '../ThemeToggle';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +44,8 @@ export default function Header() {
         {/* Desktop Nav */}
         <div className="hidden flex-1 items-center justify-between space-x-2 md:flex">
           <MainNav />
-          <nav className="flex items-center">
+          <nav className="flex items-center gap-2">
+            <ThemeToggle />
             <Button asChild>
               <Link href="/contact">Contact Us</Link>
             </Button>
