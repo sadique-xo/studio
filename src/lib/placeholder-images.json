@@ -3,8 +3,8 @@
     {
       "id": "hero-bg",
       "description": "Abstract background for hero section",
-      "imageUrl": "https://picsum.photos/seed/1/1920/1080",
-      "imageHint": "modern interior"
+      "imageUrl": "https://picsum.photos/seed/404/1920/1080",
+      "imageHint": "modern living room"
     },
     {
       "id": "about-image",
