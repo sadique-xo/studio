@@ -3,14 +3,14 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import './globals.css';
-import { DM_Sans, Inter } from 'next/font/google';
+import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
-const fontHeadline = DM_Sans({
+const fontHeadline = Bricolage_Grotesque({
   subsets: ['latin'],
   variable: '--font-headline',
-  weight: ['400', '500', '700'],
+  weight: ['400', '500', '700', '800'],
 });
 
 const fontBody = Inter({
