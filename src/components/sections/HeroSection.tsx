@@ -32,7 +32,7 @@ export default function HeroSection() {
               <Link href="/contact">Book Free Consultation</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-black">
-              <Link href="#portfolio">See Portfolio</Link>
+              <Link href="/#portfolio">See Portfolio</Link>
             </Button>
           </div>
         </div>
