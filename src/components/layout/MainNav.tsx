@@ -20,14 +20,14 @@ export default function MainNav({ isMobile = false, onLinkClick }: MainNavProps)
   const pathname = usePathname();
 
   const navClass = cn(
-    'flex gap-6 items-center',
+    'flex gap-2 items-center',
     isMobile && 'flex-col gap-4 text-lg items-start'
   );
 
   const linkClass = (href: string) => cn(
-    'transition-colors hover:text-foreground/80',
-    pathname === href ? 'text-foreground' : 'text-foreground/60',
-    isMobile && 'text-foreground/80 hover:text-foreground text-xl'
+    'transition-colors hover:text-primary px-4 py-2 rounded-full',
+    pathname === href ? 'bg-secondary text-primary' : 'text-primary/70',
+    isMobile && 'text-foreground/80 hover:text-foreground text-xl px-0'
   );
 
   return (
