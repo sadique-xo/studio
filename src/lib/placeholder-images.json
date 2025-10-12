@@ -15,7 +15,7 @@
     {
       "id": "project-1-cover",
       "description": "Cover image for Project 1",
-      "imageUrl": "https://picsum.photos/seed/101/800/600",
+      "imageUrl": "https://picsum.photos/seed/101/1200/800",
       "imageHint": "luxury villa"
     },
     {
@@ -31,9 +31,21 @@
       "imageHint": "poolside view"
     },
     {
+      "id": "project-1-before",
+      "description": "Before image for project 1",
+      "imageUrl": "https://picsum.photos/seed/104/800/600",
+      "imageHint": "old website design"
+    },
+    {
+      "id": "project-1-after",
+      "description": "After image for project 1",
+      "imageUrl": "https://picsum.photos/seed/105/800/600",
+      "imageHint": "new website design"
+    },
+    {
       "id": "project-2-cover",
       "description": "Cover image for Project 2",
-      "imageUrl": "https://picsum.photos/seed/201/800/600",
+      "imageUrl": "https://picsum.photos/seed/201/1200/800",
       "imageHint": "urban loft"
     },
     {
@@ -49,9 +61,21 @@
       "imageHint": "minimalist bedroom"
     },
     {
+      "id": "project-2-before",
+      "description": "Before image for project 2",
+      "imageUrl": "https://picsum.photos/seed/204/800/600",
+      "imageHint": "cluttered listing"
+    },
+    {
+      "id": "project-2-after",
+      "description": "After image for project 2",
+      "imageUrl": "https://picsum.photos/seed/205/800/600",
+      "imageHint": "clean brand"
+    },
+    {
       "id": "project-3-cover",
       "description": "Cover image for Project 3",
-      "imageUrl": "https://picsum.photos/seed/301/800/600",
+      "imageUrl": "https://picsum.photos/seed/301/1200/800",
       "imageHint": "beachfront property"
     },
     {
@@ -65,6 +89,18 @@
       "description": "Gallery image 2 for Project 3",
       "imageUrl": "https://picsum.photos/seed/303/800/600",
       "imageHint": "modern kitchen"
+    },
+    {
+      "id": "project-3-before",
+      "description": "Before image for project 3",
+      "imageUrl": "https://picsum.photos/seed/304/800/600",
+      "imageHint": "outdated website"
+    },
+    {
+      "id": "project-3-after",
+      "description": "After image for project 3",
+      "imageUrl": "https://picsum.photos/seed/305/800/600",
+      "imageHint": "serene website"
     },
     {
       "id": "testimonial-avatar-1",

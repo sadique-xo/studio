@@ -4,8 +4,13 @@ export type Project = {
   slug: string;
   description: string;
   shortDescription: string;
-  images: string[]; 
-  coverImage: string; 
+  challenge: string;
+  solution: string;
+  results: string;
+  images: string[];
+  coverImage: string;
+  beforeImage: string;
+  afterImage: string;
   tags: string[];
   location: string;
   published: boolean;
@@ -23,7 +28,7 @@ export type Testimonial = {
   name: string;
   role: string;
   quote: string;
-  avatarUrl: string; 
+  avatarUrl: string;
   sourceLink?: string;
   createdAt: Date;
 };

@@ -1,12 +1,13 @@
 'use client';
-import { projects } from '@/lib/placeholder-data';
+import { projects, testimonials } from '@/lib/placeholder-data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowLeft, MapPin } from 'lucide-react';
+import { ArrowLeft, MapPin, Quote } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Card, CardContent } from '@/components/ui/card';
 
 type ProjectPageProps = {
   params: {
@@ -22,6 +23,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   }
 
   const projectImages = project.images.map(url => PlaceHolderImages.find(img => img.imageUrl === url)).filter(Boolean);
+  const testimonial = testimonials.find(t => t.id === project.id); // Assuming testimonial ID matches project ID
+
+  const beforeImage = PlaceHolderImages.find(img => img.imageUrl === project.beforeImage);
+  const afterImage = PlaceHolderImages.find(img => img.imageUrl === project.afterImage);
 
 
   return (
@@ -48,57 +53,112 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </header>
 
           <div className="mb-12">
-            <div className="relative h-[300px] w-full overflow-hidden rounded-lg shadow-lg md:h-[500px]">
-              <Image
-                src={project.coverImage}
-                alt={project.title}
-                fill
-                className="object-cover"
-              />
-            </div>
+            <Card className="overflow-hidden shadow-lg">
+              <CardContent className="p-0">
+                <div className="relative h-[300px] w-full md:h-[550px]">
+                  <Image
+                    src={project.coverImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-            <div className="md:col-span-2">
-              <h2 className="font-headline text-3xl font-bold text-primary">About the Project</h2>
-              <div className="prose prose-lg mt-4 max-w-none text-muted-foreground">
-                <p>{project.description}</p>
-              </div>
-            </div>
-            <div className="md:col-span-1">
-              <div className="rounded-lg bg-card p-6 shadow-sm">
-                <h3 className="font-headline text-xl font-bold text-primary">Details</h3>
-                <div className="mt-4 flex flex-wrap gap-2">
+          <div className="grid grid-cols-1 gap-16">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+               <div className="md:col-span-1">
+                  <h3 className="font-headline text-2xl font-bold text-primary">About</h3>
+               </div>
+               <div className="md:col-span-2">
+                 <p className="text-lg text-muted-foreground">{project.description}</p>
+                 <div className="mt-6 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <Badge key={tag} variant="secondary">
                       {tag}
                     </Badge>
                   ))}
                 </div>
-              </div>
+               </div>
             </div>
-          </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+               <div className="md:col-span-1">
+                  <h3 className="font-headline text-2xl font-bold text-primary">The Challenge</h3>
+               </div>
+               <div className="md:col-span-2">
+                 <p className="text-lg text-muted-foreground">{project.challenge}</p>
+               </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+               <div className="md:col-span-1">
+                  <h3 className="font-headline text-2xl font-bold text-primary">The Solution</h3>
+               </div>
+               <div className="md:col-span-2">
+                 <p className="text-lg text-muted-foreground">{project.solution}</p>
+               </div>
+            </div>
+
+            {beforeImage && afterImage && (
+              <div className="mt-8">
+                <h2 className="font-headline text-3xl font-bold text-primary text-center mb-8">Before & After</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-center text-lg font-medium text-muted-foreground mb-4">Before</h4>
+                    <Image src={beforeImage.imageUrl} alt="Before" width={800} height={600} className="rounded-lg shadow-lg object-cover" data-ai-hint={beforeImage.imageHint} />
+                  </div>
+                  <div>
+                    <h4 className="text-center text-lg font-medium text-muted-foreground mb-4">After</h4>
+                    <Image src={afterImage.imageUrl} alt="After" width={800} height={600} className="rounded-lg shadow-lg object-cover" data-ai-hint={afterImage.imageHint} />
+                  </div>
+                </div>
+              </div>
+            )}
           
-          {projectImages.length > 0 && (
-            <div className="mt-16">
-              <h2 className="font-headline mb-8 text-center text-3xl font-bold text-primary">Gallery</h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {projectImages.map((image, index) => (
-                  image && (
-                    <div key={index} className="relative h-80 w-full overflow-hidden rounded-lg shadow-lg">
-                      <Image
-                        src={image.imageUrl}
-                        alt={`${project.title} gallery image ${index + 1}`}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={image.imageHint}
-                      />
-                    </div>
-                  )
-                ))}
+            {projectImages.length > 0 && (
+              <div className="mt-8">
+                <h2 className="font-headline mb-8 text-center text-3xl font-bold text-primary">Project Gallery</h2>
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {projectImages.map((image, index) => (
+                    image && (
+                      <div key={index} className="relative h-80 w-full overflow-hidden rounded-lg shadow-lg">
+                        <Image
+                          src={image.imageUrl}
+                          alt={`${project.title} gallery image ${index + 1}`}
+                          fill
+                          className="object-cover"
+                          data-ai-hint={image.imageHint}
+                        />
+                      </div>
+                    )
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+
+            {testimonial && (
+              <div className="mt-8 bg-card rounded-lg p-8 md:p-12 shadow-sm">
+                <div className="max-w-2xl mx-auto text-center">
+                  <Quote className="w-12 h-12 text-accent mx-auto mb-4" />
+                  <blockquote className="text-xl md:text-2xl font-medium text-foreground">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  <div className="mt-6 flex items-center justify-center gap-4">
+                     <Image src={testimonial.avatarUrl} alt={testimonial.name} width={50} height={50} className="rounded-full" />
+                     <div>
+                       <p className="font-bold text-foreground">{testimonial.name}</p>
+                       <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                     </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+          </div>
 
         </div>
       </div>
