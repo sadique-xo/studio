@@ -1,4 +1,3 @@
-'use client';
 import { projects, testimonials } from '@/lib/placeholder-data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
