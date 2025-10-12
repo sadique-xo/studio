@@ -73,6 +73,10 @@ h6 {
   body {
     @apply bg-background text-foreground;
   }
+
+  body, a, button, [role='button'] {
+    cursor: none;
+  }
 }
 
 @layer utilities {
