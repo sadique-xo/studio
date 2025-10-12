@@ -26,7 +26,7 @@ export default function MainNav({ isMobile = false, onLinkClick }: MainNavProps)
 
   const linkClass = (href: string) => cn(
     'transition-colors hover:text-primary px-4 py-2 rounded-full',
-    pathname === href ? 'bg-secondary text-primary' : 'text-primary/70',
+    pathname === href ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'text-primary/70',
     isMobile && 'text-foreground/80 hover:text-foreground text-xl px-0'
   );
 
