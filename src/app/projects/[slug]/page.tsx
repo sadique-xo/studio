@@ -25,9 +25,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const projectImages = project.images.map(url => PlaceHolderImages.find(img => img.imageUrl === url)).filter(Boolean);
   const testimonial = testimonials.find(t => t.id === project.id); // Assuming testimonial ID matches project ID
 
-  const beforeImage = PlaceHolderImages.find(img => img.imageUrl === project.beforeImage);
-  const afterImage = PlaceHolderImages.find(img => img.imageUrl === project.afterImage);
-
 
   return (
     <div className="bg-secondary">
@@ -102,22 +99,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                  <p className="text-lg text-muted-foreground">{project.solution}</p>
                </div>
             </div>
-
-            {beforeImage && afterImage && (
-              <div className="mt-8">
-                <h2 className="font-headline text-3xl font-bold text-primary text-center mb-8">Before & After</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-center text-lg font-medium text-muted-foreground mb-4">Before</h4>
-                    <Image src={beforeImage.imageUrl} alt="Before" width={800} height={600} className="rounded-lg shadow-lg object-cover" data-ai-hint={beforeImage.imageHint} />
-                  </div>
-                  <div>
-                    <h4 className="text-center text-lg font-medium text-muted-foreground mb-4">After</h4>
-                    <Image src={afterImage.imageUrl} alt="After" width={800} height={600} className="rounded-lg shadow-lg object-cover" data-ai-hint={afterImage.imageHint} />
-                  </div>
-                </div>
-              </div>
-            )}
           
             {projectImages.length > 0 && (
               <div className="mt-8">
