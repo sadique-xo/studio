@@ -13,7 +13,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="container sticky top-4 z-50">
+    <div className="container sticky top-0 z-50">
         <header className="flex h-16 items-center justify-between rounded-full border border-border/20 bg-background/30 px-6 backdrop-blur-lg shadow-sm">
             <div className="flex items-center">
                 <Link href="/" className="mr-6 flex items-center space-x-2">
