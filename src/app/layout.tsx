@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   description: 'I help property owners build calm, high-converting digital spaces — where every visitor feels at home before they arrive.',
   icons: {
     icon: '/Profile.PNG',
+    shortcut: '/Profile.PNG',
+    apple: '/Profile.PNG',
+    other: [
+      {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/Profile.PNG',
+      },
+    ],
   },
 };
 
