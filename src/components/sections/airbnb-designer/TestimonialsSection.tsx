@@ -12,7 +12,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-secondary">
+    <section id="testimonials" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">

@@ -24,7 +24,7 @@ export default function ProjectPage() {
 
 
   return (
-    <div className="bg-secondary">
+    <div className="bg-background">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-5xl mx-auto">
           <div className="mb-8">
