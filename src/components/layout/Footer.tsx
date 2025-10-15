@@ -9,14 +9,21 @@ export default function Footer() {
   return (
     <footer className="border-t">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col items-center justify-between space-y-6 md:flex-row md:space-y-0">
-          <div className="flex items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6 text-center md:text-left">
+          <div className="flex justify-center md:justify-start">
             <Logo />
           </div>
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} {siteSettings.title}. All Rights Reserved.
-          </p>
-          <div className="flex items-center space-x-4">
+          <div className="flex flex-col space-y-2">
+            <nav className="flex justify-center gap-4">
+                <Link href="/airbnb-designer" className="text-sm text-muted-foreground hover:text-foreground">
+                    Airbnb Designer
+                </Link>
+            </nav>
+             <p className="text-sm text-muted-foreground">
+                © {currentYear} {siteSettings.title}. All Rights Reserved.
+            </p>
+          </div>
+          <div className="flex items-center justify-center md:justify-end space-x-4">
             {siteSettings.socialLinks.twitter && (
               <Link href={siteSettings.socialLinks.twitter} passHref>
                 <Twitter className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
