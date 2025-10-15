@@ -5,7 +5,7 @@ export default function PortfolioSection() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section id="portfolio" className="py-16 md:py-24 bg-background">
+    <section id="portfolio" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
