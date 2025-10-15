@@ -1,9 +1,9 @@
-import HeroSection from '@/components/sections/HeroSection';
-import AboutSection from '@/components/sections/AboutSection';
-import ServicesSection from '@/components/sections/ServicesSection';
-import PortfolioSection from '@/components/sections/PortfolioSection';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import CtaSection from '@/components/sections/CtaSection';
+import HeroSection from '@/components/sections/airbnb-designer/HeroSection';
+import AboutSection from '@/components/sections/airbnb-designer/AboutSection';
+import ServicesSection from '@/components/sections/airbnb-designer/ServicesSection';
+import PortfolioSection from '@/components/sections/airbnb-designer/PortfolioSection';
+import TestimonialsSection from '@/components/sections/airbnb-designer/TestimonialsSection';
+import CtaSection from '@/components/sections/airbnb-designer/CtaSection';
 
 export default function AirbnbDesignerPage() {
   return (
