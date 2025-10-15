@@ -3,12 +3,12 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import './globals.css';
-import { Bric-a-brac_Grotesque, Inter } from 'next/font/google';
+import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import CustomCursor from '@/components/CustomCursor';
 
-const fontHeadline = Bric-a-brac_Grotesque({
+const fontHeadline = Bricolage_Grotesque({
   subsets: ['latin'],
   variable: '--font-headline',
   weight: ['400', '500', '700', '800'],
