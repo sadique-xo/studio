@@ -6,7 +6,7 @@ export default function AboutSection() {
   const aboutImage = PlaceHolderImages.find(img => img.id === 'about-image');
 
   return (
-    <section id="about" className="py-16 md:py-24 bg-background">
+    <section id="about" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           <div className="order-2 md:order-1">
