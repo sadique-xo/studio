@@ -6,6 +6,7 @@ import './globals.css';
 import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import WhatsAppWidget from '@/components/WhatsAppWidget';
 
 const fontHeadline = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -54,6 +55,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <WhatsAppWidget />
           <Toaster />
         </ThemeProvider>
       </body>
