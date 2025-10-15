@@ -46,18 +46,18 @@ export default function WhatsAppWidget() {
 
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50">
-          <Card className="w-80 shadow-2xl rounded-xl">
-            <CardHeader className="flex flex-row items-center justify-between bg-primary text-primary-foreground p-4 rounded-t-xl">
+          <Card className="w-80 shadow-2xl rounded-xl border-0">
+            <CardHeader className="flex flex-row items-center justify-between bg-card p-4 rounded-t-xl">
                 <div className="flex items-center gap-3">
                     <Image src="/Profile.PNG" alt={siteSettings.title} width={40} height={40} className="rounded-full border-2 border-primary-foreground/50" />
                     <div>
-                        <CardTitle className="text-base font-bold">{siteSettings.title}</CardTitle>
-                        <p className="text-xs text-primary-foreground/80">Typically replies within an hour</p>
+                        <CardTitle className="text-base font-bold text-foreground">{siteSettings.title}</CardTitle>
+                        <p className="text-xs text-muted-foreground">Typically replies within an hour</p>
                     </div>
                 </div>
             </CardHeader>
             <CardContent className="p-4 bg-card h-80 overflow-y-auto">
-                <div className="bg-secondary text-secondary-foreground p-3 rounded-xl rounded-bl-none max-w-xs self-start shadow">
+                <div className="bg-secondary text-secondary-foreground p-3 rounded-xl rounded-bl-none max-w-[85%] self-start shadow-sm">
                     <p className="text-sm">Hi there! 👋<br />How can I help you today?</p>
                 </div>
             </CardContent>
