@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Calendar, Eye } from 'lucide-react';
 
 export default function HeroSection() {
 
@@ -16,10 +17,16 @@ export default function HeroSection() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg">
-              <Link href="/contact">Book a 15 min call</Link>
+              <Link href="/contact" className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                Book a 15 min call
+              </Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <Link href="/#portfolio">See Portfolio</Link>
+              <Link href="/#portfolio" className="flex items-center gap-2">
+                <Eye className="h-4 w-4" />
+                See Portfolio
+              </Link>
             </Button>
           </div>
         </div>

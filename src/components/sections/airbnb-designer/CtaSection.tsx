@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Rocket } from 'lucide-react';
 
 export default function CtaSection() {
   return (
@@ -13,7 +14,10 @@ export default function CtaSection() {
         </p>
         <div className="mt-8">
           <Button asChild size="lg" variant="secondary">
-            <Link href="/contact">Start Project</Link>
+            <Link href="/contact" className="flex items-center gap-2">
+              <Rocket className="h-4 w-4" />
+              Start Project
+            </Link>
           </Button>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import WhatsAppWidget from '@/components/WhatsAppWidget';
+import InteractiveDots from '@/components/InteractiveDots';
 
 const fontHeadline = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -43,19 +44,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("font-body antialiased dotted-background", fontHeadline.variable, fontBody.variable)}>
+      <body className={cn("font-body antialiased", fontHeadline.variable, fontBody.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-            <Header />
-            <main className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-            <WhatsAppWidget />
+          <InteractiveDots />
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppWidget />
           <Toaster />
         </ThemeProvider>
       </body>

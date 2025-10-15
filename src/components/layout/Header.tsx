@@ -1,12 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Logo from './Logo';
 import MainNav from './MainNav';
+import MobileNav from './MobileNav';
 import { ThemeToggle } from '../ThemeToggle';
 
 export default function Header() {
@@ -24,22 +24,7 @@ export default function Header() {
 
           {/* Mobile Nav */}
           <div className="flex flex-1 items-center justify-end md:hidden">
-          <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-              <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle Menu</span>
-              </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="pr-0 bg-background/80 backdrop-blur-xl">
-              <Link href="/" className="mb-8 flex items-center" onClick={() => setIsMenuOpen(false)}>
-                  <Logo />
-              </Link>
-              <div className="flex flex-col space-y-4">
-                  <MainNav isMobile={true} onLinkClick={() => setIsMenuOpen(false)} />
-              </div>
-              </SheetContent>
-          </Sheet>
+            <MobileNav isOpen={isMenuOpen} onOpenChange={setIsMenuOpen} />
           </div>
 
           {/* Desktop Nav */}
@@ -48,7 +33,10 @@ export default function Header() {
               <nav className="flex items-center gap-2">
                   <ThemeToggle />
                   <Button asChild>
-                  <Link href="/contact">Book a 15 min call</Link>
+                  <Link href="/contact" className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    Book a 15 min call
+                  </Link>
                   </Button>
               </nav>
           </div>

@@ -75,9 +75,44 @@ h6 {
 }
 
 @layer utilities {
-  .dotted-background {
+  .no-dots-background {
     background-color: hsl(var(--background));
-    background-image: radial-gradient(hsl(var(--muted)) 1px, transparent 1px);
-    background-size: 16px 16px;
+  }
+  
+  /* Clean, subtle squircle utilities */
+  .squircle {
+    border-radius: 12px;
+    clip-path: inset(0 round 12px);
+  }
+  
+  .squircle-sm {
+    border-radius: 8px;
+    clip-path: inset(0 round 8px);
+  }
+  
+  .squircle-md {
+    border-radius: 16px;
+    clip-path: inset(0 round 16px);
+  }
+  
+  .squircle-lg {
+    border-radius: 20px;
+    clip-path: inset(0 round 20px);
+  }
+  
+  .squircle-xl {
+    border-radius: 24px;
+    clip-path: inset(0 round 24px);
+  }
+  
+  /* Top and bottom squircle variants */
+  .squircle-t-lg {
+    border-radius: 20px 20px 0 0;
+    clip-path: inset(0 round 20px 20px 0 0);
+  }
+  
+  .squircle-b-lg {
+    border-radius: 0 0 20px 20px;
+    clip-path: inset(0 round 0 0 20px 20px);
   }
 }
