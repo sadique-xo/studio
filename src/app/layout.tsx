@@ -6,7 +6,6 @@ import './globals.css';
 import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import CustomCursor from '@/components/CustomCursor';
 
 const fontHeadline = Bricolage_Grotesque({
   subsets: ['latin'],
@@ -50,7 +49,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-            <CustomCursor />
             <Header />
             <main className="flex-grow">
               {children}

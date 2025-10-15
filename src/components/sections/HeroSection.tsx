@@ -15,7 +15,7 @@ export default function HeroSection() {
             I help real-estate owners, Airbnb hosts, and rental managers design clean, credible websites that attract bookings — without the stress.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" variant="glass">
+            <Button asChild size="lg">
               <Link href="/contact">Book Free Consultation</Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
