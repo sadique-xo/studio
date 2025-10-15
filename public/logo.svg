@@ -1,0 +1,5 @@
+<!-- You can replace this with your own SVG logo -->
+<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="40" rx="8" fill="#E2E8F0"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#4A5568">sadique.co</text>
+</svg>

@@ -23,6 +23,9 @@ const fontBody = Inter({
 export const metadata: Metadata = {
   title: 'sadique.co | Designing serene, conversion-ready websites for real estate, homestays, and Airbnb hosts.',
   description: 'I help property owners build calm, high-converting digital spaces — where every visitor feels at home before they arrive.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
