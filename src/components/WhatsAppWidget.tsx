@@ -34,7 +34,7 @@ export default function WhatsAppWidget() {
         >
           {isOpen ? <div className="w-[55px] h-[55px] flex items-center justify-center bg-[#25D366] rounded-full"><X className="w-8 h-8 text-white" /></div> : (
             <Image 
-              src="https://img.freepik.com/premium-vector/whatsapp-app-round-icon-popular-messenger-social-media-logo_277909-873.jpg?semt=ais_hybrid&w=740&q=80"
+              src="https://i.pinimg.com/222x/ea/ef/ca/eaefcad3d9695ae94098674193faf554.jpg"
               alt="WhatsApp Icon"
               width={55}
               height={55}
