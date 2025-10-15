@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   title: 'sadique.co | Designing serene, conversion-ready websites for real estate, homestays, and Airbnb hosts.',
   description: 'I help property owners build calm, high-converting digital spaces — where every visitor feels at home before they arrive.',
   icons: {
-    icon: '/Profile.PNG',
-    shortcut: '/Profile.PNG',
-    apple: '/Profile.PNG',
+    icon: '/Profile.PNG?v=1',
+    shortcut: '/Profile.PNG?v=1',
+    apple: '/Profile.PNG?v=1',
     other: [
       {
         rel: 'apple-touch-icon-precomposed',
-        url: '/Profile.PNG',
+        url: '/Profile.PNG?v=1',
       },
     ],
   },
