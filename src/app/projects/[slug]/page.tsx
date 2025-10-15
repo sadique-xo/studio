@@ -1,5 +1,7 @@
+'use client';
+
 import { projects, testimonials } from '@/lib/placeholder-data';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -8,14 +10,10 @@ import { ArrowLeft, MapPin, Quote } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 
-type ProjectPageProps = {
-  params: {
-    slug: string;
-  };
-};
-
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default function ProjectPage() {
+  const params = useParams();
+  const slug = typeof params.slug === 'string' ? params.slug : '';
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     notFound();
