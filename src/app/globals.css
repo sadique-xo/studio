@@ -18,51 +18,50 @@ h6 {
 @layer base {
   :root {
     --background: 47 33% 96%;
-    --foreground: 158 28% 20%;
+    --foreground: 218 50% 10%; /* Rich Black */
     --card: 47 33% 96%;
-    --card-foreground: 158 28% 20%;
+    --card-foreground: 218 50% 10%;
     --popover: 47 33% 96%;
-    --popover-foreground: 158 28% 20%;
-    --primary: 158 28% 20%;
+    --popover-foreground: 218 50% 10%;
+    --primary: 218 44% 19%; /* Prussian Blue */
     --primary-foreground: 47 33% 96%;
-    --secondary: 47 28% 90%;
-    --secondary-foreground: 158 28% 20%;
-    --muted: 47 28% 85%;
-    --muted-foreground: 158 13% 48%;
-    --accent: 56 15% 66%;
-    --accent-foreground: 158 28% 20%;
+    --secondary: 212 33% 35%; /* Payne's Gray */
+    --secondary-foreground: 47 33% 96%;
+    --muted: 211 25% 75%;
+    --muted-foreground: 212 33% 45%;
+    --accent: 211 25% 57%; /* Silver Lake Blue */
+    --accent-foreground: 218 50% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
-    --border: 47 28% 85%;
-    --input: 47 28% 85%;
-    --ring: 158 28% 20%;
+    --border: 212 33% 45%;
+    --input: 212 33% 45%;
+    --ring: 218 44% 19%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
   }
   .dark {
-    --background: 158 28% 15%;
-    --foreground: 47 28% 90%;
-    --card: 158 28% 15%;
-    --card-foreground: 47 28% 90%;
-    --popover: 158 28% 15%;
-    --popover-foreground: 47 28% 90%;
-    --primary: 47 28% 90%;
-    --primary-foreground: 158 28% 15%;
-    --secondary: 158 28% 20%;
-    --secondary-foreground: 47 28% 90%;
-    --muted: 158 28% 25%;
-    --muted-foreground: 158 13% 60%;
-    --accent: 56 15% 66%;
-    --accent-foreground: 158 28% 15%;
+    --background: 218 50% 10%; /* Rich Black */
+    --foreground: 47 33% 96%; /* Eggshell */
+    --card: 218 50% 10%;
+    --card-foreground: 47 33% 96%;
+    --popover: 218 50% 10%;
+    --popover-foreground: 47 33% 96%;
+    --primary: 47 33% 96%; /* Eggshell */
+    --primary-foreground: 218 50% 10%;
+    --secondary: 212 33% 35%; /* Payne's Gray */
+    --secondary-foreground: 47 33% 96%;
+    --muted: 218 44% 19%; /* Prussian Blue */
+    --muted-foreground: 211 25% 75%;
+    --accent: 211 25% 57%; /* Silver Lake Blue */
+    --accent-foreground: 218 50% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 60 9.1% 97.8%;
-    --border: 158 28% 25%;
-    --input: 158 28% 25%;
-    --ring: 47 28% 90%;
+    --border: 218 44% 19%;
+    --input: 218 44% 19%;
+    --ring: 47 33% 96%;
   }
 }
 
