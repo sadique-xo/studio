@@ -39,7 +39,7 @@ export default function MainNav({ isMobile = false, onLinkClick }: MainNavProps)
       ))}
       {isMobile && (
          <Button asChild size="lg" className="mt-4">
-            <Link href="/contact" onClick={onLinkClick}>Contact Us</Link>
+            <Link href="/contact" onClick={onLinkClick}>Book a 15 min call</Link>
         </Button>
       )}
     </div>

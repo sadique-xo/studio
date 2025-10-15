@@ -48,7 +48,7 @@ export default function Header() {
               <nav className="flex items-center gap-2">
                   <ThemeToggle />
                   <Button asChild>
-                  <Link href="/contact">Contact Us</Link>
+                  <Link href="/contact">Book a 15 min call</Link>
                   </Button>
               </nav>
           </div>

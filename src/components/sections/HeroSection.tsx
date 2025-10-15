@@ -16,7 +16,7 @@ export default function HeroSection() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg">
-              <Link href="/contact">Book Free Consultation</Link>
+              <Link href="/contact">Book a 15 min call</Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
               <Link href="/#portfolio">See Portfolio</Link>
