@@ -29,15 +29,15 @@ export default function WhatsAppWidget() {
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           size="icon"
-          className="rounded-full w-16 h-16 bg-transparent hover:bg-transparent text-white shadow-lg transform hover:scale-110 transition-transform duration-200 p-0 overflow-hidden"
+          className="rounded-full w-[55px] h-[55px] bg-transparent hover:bg-transparent text-white shadow-lg transform hover:scale-110 transition-transform duration-200 p-0 overflow-hidden"
           onClick={toggleOpen}
         >
-          {isOpen ? <div className="w-16 h-16 flex items-center justify-center bg-[#25D366] rounded-full"><X className="w-8 h-8 text-white" /></div> : (
+          {isOpen ? <div className="w-[55px] h-[55px] flex items-center justify-center bg-[#25D366] rounded-full"><X className="w-8 h-8 text-white" /></div> : (
             <Image 
               src="https://img.freepik.com/premium-vector/whatsapp-app-round-icon-popular-messenger-social-media-logo_277909-873.jpg?semt=ais_hybrid&w=740&q=80"
               alt="WhatsApp Icon"
-              width={64}
-              height={64}
+              width={55}
+              height={55}
               className="rounded-full"
             />
           )}
