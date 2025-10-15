@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: false,
-g  },
+  },
   images: {
     remotePatterns: [
       {
