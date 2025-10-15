@@ -8,9 +8,9 @@ export const siteSettings: SiteSettings = {
   tagline: 'Where your property finds its digital home.',
   contactEmail: 'hello@sadique.co',
   socialLinks: {
-    twitter: '#',
-    linkedin: '#',
-    github: '#'
+    twitter: 'https://x.com/notsadique',
+    linkedin: 'https://www.linkedin.com/in/sadiqueh/',
+    github: 'https://github.com/sadique-xo'
   },
 };
 
