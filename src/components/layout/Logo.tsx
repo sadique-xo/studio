@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Logo() {
   return (
     <div className={cn("flex items-center gap-2 cursor-pointer")} aria-label={`${siteSettings.title} logo`}>
-      <Image src="/Profile.PNG" alt={`${siteSettings.title} logo`} width={32} height={32} className="rounded-full" />
+      <Image src="/Profile.PNG" alt={`${siteSettings.title} logo`} width={40} height={40} className="rounded-full" />
       <span className="font-bold text-lg text-primary">{siteSettings.title}</span>
     </div>
   );
