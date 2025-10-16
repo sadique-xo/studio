@@ -1,7 +1,9 @@
-# Firebase Studio
+# Studio
 
-This is a NextJS starter in Firebase Studio.
+This is a Next.js app.
 
-To get started, take a look at src/app/page.tsx.
+Deployment: Vercel.
+
+To get started, take a look at `src/app/page.tsx`.
 
 Updated by sadique-xo
