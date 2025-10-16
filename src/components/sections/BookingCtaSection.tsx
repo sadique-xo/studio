@@ -28,7 +28,7 @@ export default function BookingCtaSection() {
           <span>Email us at</span>
           <Link
             href="mailto:hello@sadique.co"
-            className="text-primary underline underline-offset-4 decoration-2"
+            className="text-primary underline underline-offset-4 decoration-2 font-semibold"
           >
             hello@sadique.co
           </Link>

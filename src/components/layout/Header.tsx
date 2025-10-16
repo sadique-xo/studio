@@ -33,7 +33,7 @@ export default function Header() {
               <nav className="flex items-center gap-2">
                   <ThemeToggle />
                   <Button asChild>
-                  <Link href="#faq" className="flex items-center gap-2">
+                  <Link href="#booking-cta" className="flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     Book a 15 min call
                   </Link>

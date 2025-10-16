@@ -10,7 +10,8 @@ export const siteSettings: SiteSettings = {
   socialLinks: {
     twitter: 'https://x.com/notsadique',
     linkedin: 'https://www.linkedin.com/in/sadiqueh/',
-    github: 'https://github.com/sadique-xo'
+    github: 'https://github.com/sadique-xo',
+    dribbble: 'https://dribbble.com/designbysadique'
   },
 };
 

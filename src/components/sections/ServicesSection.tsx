@@ -38,16 +38,16 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card key={index} className={cn(
-              "group flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2",
+              "group flex flex-col shadow-lg",
               "squircle-lg border border-primary/10 bg-gradient-to-br from-background to-background/50",
-              "backdrop-blur-sm hover:border-primary/20",
+              "backdrop-blur-sm",
               service.className
             )}>
               <CardHeader className="flex-row items-center gap-4 space-y-0 p-8">
-                <div className="flex h-20 w-20 items-center justify-center squircle-md bg-gradient-to-br from-primary/20 to-primary/10 shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="flex h-20 w-20 items-center justify-center squircle-md bg-gradient-to-br from-primary/20 to-primary/10 shrink-0">
                   {service.icon}
                 </div>
-                <CardTitle className="font-headline text-2xl group-hover:text-primary transition-colors duration-300">{service.title}</CardTitle>
+                <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="px-8 pb-8">
                 <p className="text-muted-foreground leading-relaxed">{service.description}</p>

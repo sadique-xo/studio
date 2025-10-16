@@ -37,7 +37,7 @@ export default function ServicesSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className={cn("flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300", service.className)}>
+            <Card key={index} className={cn("flex flex-col shadow-md", service.className)}>
               <CardHeader className="flex-row items-center gap-4 space-y-0">
                 <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-primary/10 shrink-0">
                   {service.icon}

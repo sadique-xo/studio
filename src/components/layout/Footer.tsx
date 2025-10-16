@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Twitter, Linkedin, Github } from 'lucide-react';
+import { Twitter, Linkedin, Github, Dribbble } from 'lucide-react';
 import Logo from './Logo';
 import { siteSettings } from '@/lib/placeholder-data';
 
@@ -27,6 +27,11 @@ export default function Footer() {
                 <Link href={siteSettings.socialLinks.github} passHref>
                     <Github className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
                 </Link>
+            )}
+            {siteSettings.socialLinks.dribbble && (
+              <Link href={siteSettings.socialLinks.dribbble} passHref>
+                <Dribbble className="h-6 w-6 text-muted-foreground transition-colors hover:text-foreground" />
+              </Link>
             )}
             </div>
           </div>

@@ -42,5 +42,8 @@ pnpm-debug.log*
 # Turbopack
 .turbo
 
+# TypeScript
+*.tsbuildinfo
+
 # Mac
 .DS_Store

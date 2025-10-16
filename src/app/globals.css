@@ -17,18 +17,18 @@ h6 {
 
 @layer base {
   :root {
-    --background: 47 33% 96%;
+    --background: 0 0% 100%;
     --foreground: 218 50% 10%; /* Rich Black */
-    --card: 47 33% 96%;
+    --card: 0 0% 100%;
     --card-foreground: 218 50% 10%;
-    --popover: 47 33% 96%;
+    --popover: 0 0% 100%;
     --popover-foreground: 218 50% 10%;
     --primary: 218 44% 19%; /* Prussian Blue */
     --primary-foreground: 47 33% 96%;
     --secondary: 212 33% 35%; /* Payne's Gray */
     --secondary-foreground: 47 33% 96%;
     --muted: 211 25% 75%;
-    --muted-foreground: 212 33% 45%;
+    --muted-foreground: 212 33% 30%;
     --accent: 211 25% 57%; /* Silver Lake Blue */
     --accent-foreground: 218 50% 10%;
     --destructive: 0 84.2% 60.2%;
@@ -54,7 +54,7 @@ h6 {
     --secondary: 212 33% 35%; /* Payne's Gray */
     --secondary-foreground: 47 33% 96%;
     --muted: 218 44% 19%; /* Prussian Blue */
-    --muted-foreground: 211 25% 75%;
+    --muted-foreground: 211 25% 60%;
     --accent: 211 25% 57%; /* Silver Lake Blue */
     --accent-foreground: 218 50% 10%;
     --destructive: 0 62.8% 30.6%;

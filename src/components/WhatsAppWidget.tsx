@@ -20,7 +20,7 @@ export default function WhatsAppWidget() {
         <div className="relative">
           <Button
             size="icon"
-            className="relative rounded-full w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] hover:bg-[#128C7E] text-white shadow-2xl transform hover:scale-110 transition-all duration-300 p-0 border-2 border-white"
+            className="relative rounded-full w-12 h-12 sm:w-14 sm:h-14 bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl transform hover:scale-110 transition-all duration-300 p-0 border-2 border-white"
             onClick={toggleOpen}
           >
             {isOpen ? (
@@ -37,7 +37,7 @@ export default function WhatsAppWidget() {
         <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-50 animate-in slide-in-from-bottom-2 duration-300">
           <Card className="w-72 sm:w-80 shadow-2xl rounded-2xl border border-gray-200/50 bg-card/95 backdrop-blur-sm overflow-hidden">
             {/* Header */}
-            <CardHeader className="flex flex-row items-center justify-between bg-[#25D366] p-4 rounded-t-2xl text-white">
+            <CardHeader className="flex flex-row items-center justify-between bg-primary p-4 rounded-t-2xl text-primary-foreground">
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <Image 
@@ -49,9 +49,9 @@ export default function WhatsAppWidget() {
                   />
                 </div>
                 <div>
-                  <CardTitle className="text-base font-bold text-white">Sadique</CardTitle>
-                  <div className="text-xs text-white/80 flex items-center gap-1">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <CardTitle className="text-base font-bold text-primary-foreground">Sadique</CardTitle>
+                  <div className="text-xs text-primary-foreground/80 flex items-center gap-1">
+                    <div className="w-2 h-2 bg-primary-foreground/60 rounded-full animate-pulse"></div>
                     Online now
                   </div>
                 </div>
@@ -62,10 +62,10 @@ export default function WhatsAppWidget() {
             <CardContent className="p-3 sm:p-4 bg-card h-64 sm:h-80 flex flex-col">
               {/* Welcome Message */}
               <div className="flex items-start gap-3 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <MessageCircle className="w-4 h-4 text-white" />
+                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <MessageCircle className="w-4 h-4 text-primary-foreground" />
                 </div>
-                <div className="bg-[#E5E5EA] text-[#000000] px-4 py-3 rounded-3xl rounded-bl-sm max-w-[85%] shadow-sm">
+                <div className="bg-muted text-muted-foreground px-4 py-3 rounded-3xl rounded-bl-sm max-w-[85%] shadow-sm">
                   <p className="text-sm leading-relaxed">Hi there! 👋</p>
                   <p className="text-sm mt-1 leading-relaxed">I'm here to help you with your property needs. What can I do for you today?</p>
                 </div>
@@ -79,7 +79,7 @@ export default function WhatsAppWidget() {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="text-xs h-8 rounded-full flex-1 sm:flex-none"
+                  className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/20"
                   onClick={() => {
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I'd like to connect over a call to discuss my project.")}`;
                     window.open(whatsappUrl, "_blank");
@@ -92,7 +92,7 @@ export default function WhatsAppWidget() {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="text-xs h-8 rounded-full flex-1 sm:flex-none"
+                  className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/20"
                   onClick={() => {
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I want to know more about your services.")}`;
                     window.open(whatsappUrl, "_blank");
