@@ -3,7 +3,7 @@ import AboutSection from '@/components/sections/AboutSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import PortfolioSection from '@/components/sections/PortfolioSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import CtaSection from '@/components/sections/CtaSection';
+import FAQSection from '@/components/sections/FAQSection';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <ServicesSection />
       <PortfolioSection />
       <TestimonialsSection />
-      <CtaSection />
+      <FAQSection />
     </>
   );
 }
