@@ -22,7 +22,7 @@ export default function AboutSection() {
           </div>
           <div className="order-1 md:order-2">
             {aboutImage && (
-              <Card className="overflow-hidden shadow-lg">
+              <Card className="overflow-hidden shadow-lg border border-border/20 bg-background/30 backdrop-blur-lg">
                 <CardContent className="p-0">
                   <Image
                     src={aboutImage.imageUrl}

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
+import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 const faqs = [
@@ -29,19 +30,39 @@ const faqs = [
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { theme, resolvedTheme } = useTheme();
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const backgroundImage = resolvedTheme === 'dark' 
+    ? '/faq-images/faq-dark.jpg' 
+    : '/faq-images/faq-light.jpg';
+
   return (
-    <section id="faq" className="py-16 md:py-24 bg-primary text-primary-foreground">
+    <section 
+      id="faq" 
+      className={cn(
+        "py-16 md:py-24 relative",
+        resolvedTheme === 'dark' ? "text-primary-foreground" : "text-gray-900"
+      )}
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl font-bold md:text-4xl">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
+          <p className={cn(
+            "mt-4 max-w-2xl mx-auto text-lg",
+            resolvedTheme === 'dark' ? "text-primary-foreground/80" : "text-gray-700"
+          )}>
             Everything you need to know about our services and process.
           </p>
         </div>
@@ -51,21 +72,34 @@ export default function FAQSection() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border border-primary-foreground/20 rounded-lg bg-primary-foreground/5"
+                className={cn(
+                  "border rounded-xl overflow-hidden",
+                  resolvedTheme === 'dark' 
+                    ? "border-primary-foreground/20 bg-primary-foreground/5" 
+                    : "border-gray-300 bg-white/80"
+                )}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-primary-foreground/10 transition-colors"
+                  className="w-full px-6 py-4 text-left flex items-center justify-between transition-colors"
                 >
-                  <span className="font-medium text-primary-foreground pr-4">
+                  <span className={cn(
+                    "font-medium pr-4",
+                    resolvedTheme === 'dark' ? "text-primary-foreground" : "text-gray-900"
+                  )}>
                     {faq.question}
                   </span>
-                  <ChevronDown
-                    className={cn(
-                      "h-5 w-5 text-primary-foreground/70 transition-transform duration-200 flex-shrink-0",
-                      openIndex === index && "rotate-180"
-                    )}
-                  />
+                  {openIndex === index ? (
+                    <Minus className={cn(
+                      "h-5 w-5 flex-shrink-0",
+                      resolvedTheme === 'dark' ? "text-primary-foreground/70" : "text-gray-600"
+                    )} />
+                  ) : (
+                    <Plus className={cn(
+                      "h-5 w-5 flex-shrink-0",
+                      resolvedTheme === 'dark' ? "text-primary-foreground/70" : "text-gray-600"
+                    )} />
+                  )}
                 </button>
                 <div
                   className={cn(
@@ -73,7 +107,10 @@ export default function FAQSection() {
                     openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   )}
                 >
-                  <div className="px-6 pb-4 text-primary-foreground/80">
+                  <div className={cn(
+                    "px-6 pb-4",
+                    resolvedTheme === 'dark' ? "text-primary-foreground/80" : "text-gray-700"
+                  )}>
                     {faq.answer}
                   </div>
                 </div>
