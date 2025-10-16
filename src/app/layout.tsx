@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import BookingCtaSection from '@/components/sections/BookingCtaSection';
 import './globals.css';
 import { Bricolage_Grotesque, Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
@@ -56,6 +57,7 @@ export default function RootLayout({
           <main className="flex-grow">
             {children}
           </main>
+          <BookingCtaSection />
           <Footer />
           <WhatsAppWidget />
           <Toaster />
