@@ -32,11 +32,11 @@ export default function HeroSection() {
         {/* Content - Below Animation */}
         <div className="relative z-10 flex flex-col items-center text-center space-y-6">
           <h1 className="font-headline text-4xl font-bold md:text-6xl lg:text-7xl text-primary leading-tight mt-0">
-            Experts in designing & developing Websites, Mobile Apps
+            Expert in designing & developing <span className="underline underline-offset-4 decoration-2">websites</span>, <span className="underline underline-offset-4 decoration-2">mobile apps</span>
           </h1>
           <div className="flex items-center justify-center">
             <Button asChild size="lg">
-              <Link href="/contact" className="flex items-center gap-2">
+              <Link href="#testimonials" className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 Book a 15 min call
               </Link>

@@ -50,10 +50,10 @@ export default function WhatsAppWidget() {
                 </div>
                 <div>
                   <CardTitle className="text-base font-bold text-white">Sadique</CardTitle>
-                  <p className="text-xs text-white/80 flex items-center gap-1">
+                  <div className="text-xs text-white/80 flex items-center gap-1">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                     Online now
-                  </p>
+                  </div>
                 </div>
               </div>
             </CardHeader>
