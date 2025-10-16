@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { Search, Grid3X3, Infinity, Send, Palette, Code, Music, CheckCircle } from 'lucide-react';
+import { Search, Grid3X3, Infinity, Send, Palette, Code, Music, CheckCircle, Github, Linkedin, Twitter, Dribbble } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function AboutSection() {
@@ -10,7 +10,7 @@ export default function AboutSection() {
     { icon: Search, label: 'Research' },
     { icon: Grid3X3, label: 'Wireframe' },
     { icon: Infinity, label: 'Design' },
-    { icon: Send, label: 'Development' }
+    { icon: Code, label: 'Development' }
   ];
 
   const designStack = [
@@ -71,17 +71,17 @@ export default function AboutSection() {
           {/* Profile Card */}
           <Card className="bg-card shadow-lg rounded-2xl p-8 border border-border/20">
             <CardContent className="p-0">
-              <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden bg-muted">
+              <div className="text-left">
+                <div className="w-28 h-28 mb-6 rounded-2xl overflow-hidden bg-muted">
                   <Image
-                    src="/Profile.PNG"
+                    src="/Profile-Sadique.jpeg"
                     alt="Sadique Profile"
-                    width={96}
-                    height={96}
-                    className="w-full h-full object-cover"
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-cover grayscale"
                   />
                 </div>
-                <div className="flex flex-wrap justify-center gap-2 mb-6">
+                <div className="flex flex-wrap justify-start gap-2 mb-6">
                   <span className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm">
                     Web designer
                   </span>
@@ -92,6 +92,44 @@ export default function AboutSection() {
                 <p className="text-card-foreground text-left leading-relaxed">
                   An aspiring web designer with a passion for creativity and innovation. I'm a freelancer who's passionate about creating visually stunning designs that captivate and inspire.
                 </p>
+                <div className="mt-4 flex items-center gap-3">
+                  <a
+                    href="https://github.com/sadique-xo"
+                    aria-label="GitHub"
+                    className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/70 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/sadiqueh/"
+                    aria-label="LinkedIn"
+                    className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/70 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://x.com/notsadique"
+                    aria-label="Twitter"
+                    className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/70 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Twitter className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://dribbble.com/designbysadique"
+                    aria-label="Dribbble"
+                    className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/70 transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Dribbble className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </CardContent>
           </Card>

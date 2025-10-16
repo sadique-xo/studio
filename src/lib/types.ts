@@ -41,5 +41,6 @@ export type SiteSettings = {
     twitter?: string;
     linkedin?: string;
     github?: string;
+    dribbble?: string;
   };
 };
