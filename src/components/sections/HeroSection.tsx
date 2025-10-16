@@ -36,7 +36,7 @@ export default function HeroSection() {
           </h1>
           <div className="flex items-center justify-center">
             <Button asChild size="lg">
-              <Link href="#testimonials" className="flex items-center gap-2">
+              <Link href="#booking-cta" className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 Book a 15 min call
               </Link>

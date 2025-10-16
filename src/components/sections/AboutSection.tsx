@@ -51,7 +51,7 @@ export default function AboutSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % cityImages.length);
-    }, 2000);
+    }, 1000);
 
     return () => clearInterval(interval);
   }, [cityImages.length]);
@@ -205,6 +205,11 @@ export default function AboutSection() {
           <Card className="bg-transparent shadow-lg rounded-2xl overflow-hidden p-0 h-75 border-0">
             <CardContent className="p-0 h-full">
               <div className="relative h-full w-full overflow-hidden rounded-2xl">
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="text-lg font-medium text-white dark:text-foreground bg-black/20 dark:bg-background/20 px-4 py-2 rounded-full backdrop-blur-sm">
+                    Life
+                  </span>
+                </div>
                 {cityImages.map((image, index) => (
                   <div
                     key={image.id}
