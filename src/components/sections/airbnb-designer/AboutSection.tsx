@@ -1,9 +1,7 @@
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function AboutSection() {
-  const aboutImage = PlaceHolderImages.find(img => img.id === 'about-image');
 
   return (
     <section id="about" className="py-16 md:py-24">
@@ -21,20 +19,17 @@ export default function AboutSection() {
             </p>
           </div>
           <div className="order-1 md:order-2">
-            {aboutImage && (
-              <Card className="overflow-hidden shadow-lg border border-border/20 bg-background/30 backdrop-blur-lg">
-                <CardContent className="p-0">
-                  <Image
-                    src={aboutImage.imageUrl}
-                    alt={aboutImage.description}
-                    width={600}
-                    height={800}
-                    className="h-full w-full object-cover"
-                    data-ai-hint={aboutImage.imageHint}
-                  />
-                </CardContent>
-              </Card>
-            )}
+            <Card className="overflow-hidden shadow-lg border border-border/20 bg-background/30 backdrop-blur-lg">
+              <CardContent className="p-0">
+                <Image
+                  src={"https://picsum.photos/seed/2/600/800"}
+                  alt={"Image for about section"}
+                  width={600}
+                  height={800}
+                  className="h-full w-full object-cover"
+                />
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

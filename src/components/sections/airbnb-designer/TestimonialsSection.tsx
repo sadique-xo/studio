@@ -8,7 +8,6 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function TestimonialsSection() {
   return (
@@ -32,7 +31,6 @@ export default function TestimonialsSection() {
           >
             <CarouselContent>
               {testimonials.map((testimonial) => {
-                const avatar = PlaceHolderImages.find(img => img.imageUrl === testimonial.avatarUrl);
                 return (
                   <CarouselItem key={testimonial.id}>
                     <div className="p-1">
@@ -44,7 +42,6 @@ export default function TestimonialsSection() {
                               alt={testimonial.name}
                               fill
                               className="rounded-full object-cover"
-                              data-ai-hint={avatar?.imageHint || 'person portrait'}
                             />
                           </div>
                           <blockquote className="mt-2 text-xl md:text-2xl font-medium max-w-3xl mx-auto">

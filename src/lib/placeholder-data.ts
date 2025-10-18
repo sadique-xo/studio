@@ -1,7 +1,28 @@
 import type { SiteSettings, Project, Testimonial } from './types';
-import { PlaceHolderImages } from './placeholder-images';
 
-const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || '';
+const imageById: Record<string, string> = {
+  'hero-bg': 'https://picsum.photos/seed/404/1920/1080',
+  'about-image': 'https://picsum.photos/seed/2/600/800',
+  'project-1-cover': 'https://picsum.photos/seed/111/1200/800',
+  'project-1-gallery-1': 'https://picsum.photos/seed/102/800/600',
+  'project-1-gallery-2': 'https://picsum.photos/seed/103/800/600',
+  'project-1-before': 'https://picsum.photos/seed/104/800/600',
+  'project-1-after': 'https://picsum.photos/seed/105/800/600',
+  'project-2-cover': 'https://picsum.photos/seed/201/1200/800',
+  'project-2-gallery-1': 'https://picsum.photos/seed/202/800/600',
+  'project-2-gallery-2': 'https://picsum.photos/seed/203/800/600',
+  'project-2-before': 'https://picsum.photos/seed/204/800/600',
+  'project-2-after': 'https://picsum.photos/seed/205/800/600',
+  'project-3-cover': 'https://picsum.photos/seed/301/1200/800',
+  'project-3-gallery-1': 'https://picsum.photos/seed/302/800/600',
+  'project-3-gallery-2': 'https://picsum.photos/seed/303/800/600',
+  'project-3-before': 'https://picsum.photos/seed/304/800/600',
+  'project-3-after': 'https://picsum.photos/seed/305/800/600',
+  'testimonial-avatar-1': 'https://picsum.photos/seed/901/100/100',
+  'testimonial-avatar-2': 'https://picsum.photos/seed/902/100/100',
+};
+
+const getImage = (id: string) => imageById[id] || '';
 
 export const siteSettings: SiteSettings = {
   title: 'sadique.co',
