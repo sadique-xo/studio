@@ -15,7 +15,7 @@ export default function ProjectCard({ project, fullWidth = false }: ProjectCardP
 
   return (
     <Card className={cn(
-        "group relative flex flex-col overflow-hidden text-foreground border border-border/20 squircle-lg bg-card",
+        "group relative flex flex-col overflow-hidden text-foreground border border-border/35 squircle-lg bg-card",
         fullWidth ? "md:col-span-2" : "md:col-span-1"
     )}>
       <Link href={`/projects/${project.slug}`} className="absolute inset-0">

@@ -69,7 +69,7 @@ export default function AboutSection() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Profile Card */}
-          <Card className="bg-card shadow-lg rounded-2xl p-8 border border-border/20">
+          <Card className="bg-card shadow-lg rounded-2xl p-8 border border-border/35">
             <CardContent className="p-0">
               <div className="text-left">
                 <div className="w-28 h-28 mb-6 rounded-2xl overflow-hidden bg-muted">
@@ -135,11 +135,11 @@ export default function AboutSection() {
           </Card>
 
           {/* Process Card */}
-          <Card className="bg-card shadow-lg rounded-2xl p-8 border border-border/20">
+          <Card className="bg-card shadow-lg rounded-2xl p-8 border border-border/35">
             <CardContent className="p-0">
               <div className="space-y-4 mb-6">
                 {processSteps.map((step, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 process-card rounded-xl border border-border/20">
+                  <div key={index} className="flex items-center gap-3 p-3 process-card rounded-xl border border-border/35">
                     <step.icon className="w-5 h-5" />
                     <span className="font-medium">{step.label}</span>
                   </div>
@@ -156,7 +156,7 @@ export default function AboutSection() {
         {/* Additional Cards Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-8">
           {/* Design Stack Card */}
-          <Card className="bg-card shadow-lg rounded-2xl p-6 h-75 border border-border/20">
+          <Card className="bg-card shadow-lg rounded-2xl p-6 h-75 border border-border/35">
             <CardContent className="p-0 h-full flex flex-col">
               <div className="text-left flex-1">
                 <h3 className="font-bold text-card-foreground text-lg mb-1">Design stack</h3>
@@ -174,7 +174,7 @@ export default function AboutSection() {
           </Card>
 
           {/* Goals Card */}
-          <Card className="bg-card shadow-lg rounded-2xl p-6 h-75 border border-border/20">
+          <Card className="bg-card shadow-lg rounded-2xl p-6 h-75 border border-border/35">
             <CardContent className="p-0 h-full flex flex-col">
               <div className="text-left flex-1">
                 <h3 className="font-bold text-card-foreground text-lg mb-1">My next goals</h3>
