@@ -46,7 +46,7 @@ export function ThemeToggle() {
           {isDark ? (
             <Moon className="h-3 w-3 text-muted-foreground" />
           ) : (
-            <Sun className="h-3 w-3 text-amber-500" />
+            <Sun className="h-3 w-3 text-muted-foreground" />
           )}
         </motion.div>
       </div>

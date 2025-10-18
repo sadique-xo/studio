@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { X, MessageCircle, Phone, Mail } from "lucide-react";
+import { X, MessageCircle, Phone, Info } from "lucide-react";
 import { siteSettings } from "@/lib/placeholder-data";
 import Image from "next/image";
 
@@ -94,13 +94,13 @@ export default function WhatsAppWidget() {
                   size="sm" 
                   className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/35"
                   onClick={() => {
-                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I want to know more about your services.")}`;
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I'd like to connect with you.")}`;
                     window.open(whatsappUrl, "_blank");
                     setIsOpen(false);
                   }}
                 >
-                  <Mail className="w-3 h-3 mr-1" />
-                  I want to know more
+                  <Info className="w-3 h-3 mr-1" />
+                  I want to know more.
                 </Button>
               </div>
             </CardContent>

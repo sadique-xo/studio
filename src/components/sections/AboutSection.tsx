@@ -63,7 +63,7 @@ export default function AboutSection() {
           <h2 className="font-headline text-3xl font-bold md:text-4xl mb-4">
             Meet the designer
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
             From wireframes to real things people use.
           </p>
         </div>

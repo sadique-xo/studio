@@ -7,8 +7,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft, MapPin, Quote } from 'lucide-react';
- 
+import Breadcrumb from '@/components/Breadcrumb';
 import { Card, CardContent } from '@/components/ui/card';
+import { Metadata } from 'next';
 
 export default function ProjectPage() {
   const params = useParams();
@@ -28,6 +29,13 @@ export default function ProjectPage() {
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-5xl mx-auto">
           <div className="mb-8">
+            <Breadcrumb 
+              items={[
+                { label: 'Projects', href: '/#portfolio' },
+                { label: project.title }
+              ]}
+              className="mb-4"
+            />
             <Button variant="ghost" asChild>
               <Link href="/#portfolio">
                 <ArrowLeft className="mr-2 h-4 w-4" />

@@ -27,7 +27,7 @@ const getImage = (id: string) => imageById[id] || '';
 export const siteSettings: SiteSettings = {
   title: 'sadique.co',
   tagline: 'Where your property finds its digital home.',
-  contactEmail: 'hello@sadique.co',
+  contactEmail: 'sadique.design@icloud.com',
   socialLinks: {
     twitter: 'https://x.com/notsadique',
     linkedin: 'https://www.linkedin.com/in/sadiqueh/',

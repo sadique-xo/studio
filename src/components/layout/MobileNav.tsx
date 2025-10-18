@@ -10,8 +10,8 @@ import {
   Calendar, 
   Home, 
   User, 
-  Briefcase, 
   Palette,
+  BookOpen,
   ChevronRight,
   Sparkles,
   ArrowRight
@@ -30,18 +30,11 @@ interface MobileNavProps {
 
 const navLinks = [
   { 
-    href: '/#about', 
+    href: '/about', 
     label: 'About', 
     icon: User,
     description: 'Learn about my journey',
     color: 'from-blue-500 to-cyan-500'
-  },
-  { 
-    href: '/#services', 
-    label: 'Services', 
-    icon: Briefcase,
-    description: 'What I can do for you',
-    color: 'from-purple-500 to-pink-500'
   },
   { 
     href: '/#portfolio', 
@@ -49,6 +42,13 @@ const navLinks = [
     icon: Palette,
     description: 'See my recent work',
     color: 'from-emerald-500 to-teal-500'
+  },
+  { 
+    href: 'https://tale.sadique.co', 
+    label: 'Blog', 
+    icon: BookOpen,
+    description: 'Read my thoughts and stories',
+    color: 'from-orange-500 to-red-500'
   },
 ];
 
@@ -175,6 +175,7 @@ export default function MobileNav({ isOpen, onOpenChange }: MobileNavProps) {
                           ? "bg-primary/10 border border-primary/10" 
                           : "hover:bg-muted/50 border border-transparent hover:border-border/35"
                       )}
+                      {...(link.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
                     >
                       {/* Background gradient on hover */}
                       <motion.div
