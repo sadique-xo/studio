@@ -20,7 +20,7 @@ export default function WhatsAppWidget() {
         <div className="relative">
           <Button
             size="icon"
-            className="relative rounded-full w-12 h-12 sm:w-14 sm:h-14 bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl transform hover:scale-110 transition-all duration-300 p-0 border-2 border-white"
+            className="relative rounded-full w-12 h-12 sm:w-14 sm:h-14 bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl transform hover:scale-110 transition-all duration-300 p-0 border-2 border-border"
             onClick={toggleOpen}
           >
             {isOpen ? (
@@ -35,7 +35,7 @@ export default function WhatsAppWidget() {
       {/* Chat Widget */}
       {isOpen && (
         <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-50 animate-in slide-in-from-bottom-2 duration-300">
-          <Card className="w-72 sm:w-80 shadow-2xl rounded-2xl border border-gray-200/50 bg-card/95 backdrop-blur-sm overflow-hidden">
+          <Card className="w-72 sm:w-80 shadow-2xl rounded-2xl border border-border/50 bg-card/95 backdrop-blur-sm overflow-hidden">
             {/* Header */}
             <CardHeader className="flex flex-row items-center justify-between bg-primary p-4 rounded-t-2xl text-primary-foreground">
               <div className="flex items-center gap-3">
@@ -45,7 +45,7 @@ export default function WhatsAppWidget() {
                     alt={siteSettings.title} 
                     width={40} 
                     height={40} 
-                    className="rounded-full border-2 border-white/30" 
+                    className="rounded-full border-2 border-border/30" 
                   />
                 </div>
                 <div>

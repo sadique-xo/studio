@@ -17,25 +17,25 @@ h6 {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 218 50% 10%; /* Rich Black */
-    --card: 0 0% 100%;
-    --card-foreground: 218 50% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 218 50% 10%;
-    --primary: 218 44% 19%; /* Prussian Blue */
-    --primary-foreground: 47 33% 96%;
-    --secondary: 212 33% 35%; /* Payne's Gray */
-    --secondary-foreground: 47 33% 96%;
-    --muted: 211 25% 75%;
-    --muted-foreground: 212 33% 30%;
-    --accent: 211 25% 57%; /* Silver Lake Blue */
-    --accent-foreground: 218 50% 10%;
+    --background: 0 0% 100%; /* White */
+    --foreground: 220 100% 4%; /* #000814 - Very Dark Blue */
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 220 100% 4%; /* #000814 - Very Dark Blue */
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 220 100% 4%; /* #000814 - Very Dark Blue */
+    --primary: 220 100% 4%; /* #000814 - Very Dark Blue */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 220 100% 8%; /* #0d1321 - Dark Blue */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 220 100% 8%; /* #0d1321 - Dark Blue */
+    --muted-foreground: 0 0% 70%; /* Light Gray */
+    --accent: 220 100% 8%; /* #0d1321 - Dark Blue */
+    --accent-foreground: 0 0% 100%; /* White */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
-    --border: 212 33% 45%;
-    --input: 212 33% 45%;
-    --ring: 218 44% 19%;
+    --border: 220 100% 8%; /* #0d1321 - Dark Blue */
+    --input: 220 100% 8%; /* #0d1321 - Dark Blue */
+    --ring: 220 100% 4%; /* #000814 - Very Dark Blue */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -43,25 +43,25 @@ h6 {
     --chart-5: 27 87% 67%;
   }
   .dark {
-    --background: 218 50% 10%; /* Rich Black */
-    --foreground: 47 33% 96%; /* Eggshell */
-    --card: 218 50% 10%;
-    --card-foreground: 47 33% 96%;
-    --popover: 218 50% 10%;
-    --popover-foreground: 47 33% 96%;
-    --primary: 47 33% 96%; /* Eggshell */
-    --primary-foreground: 218 50% 10%;
-    --secondary: 212 33% 35%; /* Payne's Gray */
-    --secondary-foreground: 47 33% 96%;
-    --muted: 218 44% 19%; /* Prussian Blue */
-    --muted-foreground: 211 25% 60%;
-    --accent: 211 25% 57%; /* Silver Lake Blue */
-    --accent-foreground: 218 50% 10%;
+    --background: 0 0% 0%; /* #000000 - Pure Black */
+    --foreground: 0 0% 100%; /* White */
+    --card: 0 0% 8%; /* #141414 - Neutral Dark */
+    --card-foreground: 0 0% 100%; /* White */
+    --popover: 0 0% 8%; /* #141414 - Neutral Dark */
+    --popover-foreground: 0 0% 100%; /* White */
+    --primary: 0 0% 100%; /* White */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --secondary: 0 0% 12%; /* #1f1f1f - Neutral Darker */
+    --secondary-foreground: 0 0% 100%; /* White */
+    --muted: 0 0% 12%; /* #1f1f1f - Neutral Darker */
+    --muted-foreground: 0 0% 70%; /* Light Gray */
+    --accent: 0 0% 12%; /* #1f1f1f - Neutral Darker */
+    --accent-foreground: 0 0% 100%; /* White */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 60 9.1% 97.8%;
-    --border: 218 44% 19%;
-    --input: 218 44% 19%;
-    --ring: 47 33% 96%;
+    --border: 0 0% 20%; /* #333333 - Neutral Border */
+    --input: 0 0% 20%; /* #333333 - Neutral Border */
+    --ring: 0 0% 100%; /* White */
   }
 }
 
@@ -78,6 +78,50 @@ h6 {
 @layer utilities {
   .no-dots-background {
     background-color: hsl(var(--background));
+  }
+  
+  .process-card {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+  }
+  
+  .dark .process-card {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+  }
+  
+  .profile-badge {
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .dark .profile-badge {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .social-icon {
+    background-color: hsl(var(--card));
+    color: hsl(var(--foreground));
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .dark .social-icon {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .social-icon:hover {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+  }
+  
+  .dark .social-icon:hover {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
   }
   
   /* Clean, subtle squircle utilities */

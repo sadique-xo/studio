@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Plus, Minus } from "lucide-react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
@@ -30,7 +30,12 @@ const faqs = [
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
   const { theme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -39,6 +44,68 @@ export default function FAQSection() {
   const backgroundImage = resolvedTheme === 'dark' 
     ? '/faq-images/faq-dark.jpg' 
     : '/faq-images/faq-light.jpg';
+
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return (
+      <section 
+        id="faq" 
+        className="py-16 md:py-24 relative text-gray-900"
+        style={{
+          backgroundImage: 'url(/faq-images/faq-light.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-3xl font-bold md:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-700">
+              Everything you need to know about our services and process.
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="border rounded-xl overflow-hidden border-gray-300 bg-white/80"
+                >
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full px-6 py-4 text-left flex items-center justify-between transition-colors"
+                  >
+                    <span className="font-medium pr-4 text-gray-900">
+                      {faq.question}
+                    </span>
+                    {openIndex === index ? (
+                      <Minus className="h-5 w-5 flex-shrink-0 text-gray-600" />
+                    ) : (
+                      <Plus className="h-5 w-5 flex-shrink-0 text-gray-600" />
+                    )}
+                  </button>
+                  <div
+                    className={cn(
+                      "overflow-hidden transition-all duration-300 ease-in-out",
+                      openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    )}
+                  >
+                    <div className="px-6 pb-4 text-gray-700">
+                      {faq.answer}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section 

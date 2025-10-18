@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft, MapPin, Quote } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+ 
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function ProjectPage() {
@@ -19,7 +19,7 @@ export default function ProjectPage() {
     notFound();
   }
 
-  const projectImages = project.images.map(url => PlaceHolderImages.find(img => img.imageUrl === url)).filter(Boolean);
+  const projectImages = project.images.map(url => ({ imageUrl: url, imageHint: 'project image' }));
   const testimonial = testimonials.find(t => t.id === project.id); // Assuming testimonial ID matches project ID
 
 

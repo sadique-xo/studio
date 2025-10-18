@@ -82,21 +82,21 @@ export default function AboutSection() {
                   />
                 </div>
                 <div className="flex flex-wrap justify-start gap-2 mb-6">
-                  <span className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm">
-                    Web designer
+                  <span className="px-3 py-1 profile-badge rounded-full text-sm">
+                    Web Designer
                   </span>
-                  <span className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm">
-                    5+ years experience
+                  <span className="px-3 py-1 profile-badge rounded-full text-sm">
+                    5+ Years Experience
                   </span>
                 </div>
                 <p className="text-card-foreground text-left leading-relaxed">
-                  An aspiring web designer with a passion for creativity and innovation. I'm a freelancer who's passionate about creating visually stunning designs that captivate and inspire.
+                  A modern web designer with a passion for creativity and innovation. I'm a freelancer who's passionate about creating visually stunning and user-friendly designs that captivate and inspire.
                 </p>
                 <div className="mt-4 flex items-center gap-3">
                   <a
                     href="https://github.com/sadique-xo"
                     aria-label="GitHub"
-                    className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/70 transition"
+                    className="p-2 rounded-full social-icon transition"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -105,7 +105,7 @@ export default function AboutSection() {
                   <a
                     href="https://www.linkedin.com/in/sadiqueh/"
                     aria-label="LinkedIn"
-                    className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/70 transition"
+                    className="p-2 rounded-full social-icon transition"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -114,7 +114,7 @@ export default function AboutSection() {
                   <a
                     href="https://x.com/notsadique"
                     aria-label="Twitter"
-                    className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/70 transition"
+                    className="p-2 rounded-full social-icon transition"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -123,7 +123,7 @@ export default function AboutSection() {
                   <a
                     href="https://dribbble.com/designbysadique"
                     aria-label="Dribbble"
-                    className="p-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/70 transition"
+                    className="p-2 rounded-full social-icon transition"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -139,9 +139,9 @@ export default function AboutSection() {
             <CardContent className="p-0">
               <div className="space-y-4 mb-6">
                 {processSteps.map((step, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-muted rounded-xl border border-border/20">
-                    <step.icon className="w-5 h-5 text-muted-foreground" />
-                    <span className="text-card-foreground font-medium">{step.label}</span>
+                  <div key={index} className="flex items-center gap-3 p-3 process-card rounded-xl border border-border/20">
+                    <step.icon className="w-5 h-5" />
+                    <span className="font-medium">{step.label}</span>
                   </div>
                 ))}
               </div>
@@ -206,7 +206,7 @@ export default function AboutSection() {
             <CardContent className="p-0 h-full">
               <div className="relative h-full w-full overflow-hidden rounded-2xl">
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="text-lg font-medium text-white dark:text-foreground bg-black/20 dark:bg-background/20 px-4 py-2 rounded-full backdrop-blur-sm">
+                  <span className="text-lg font-medium text-foreground bg-foreground/20 dark:bg-background/20 px-4 py-2 rounded-full backdrop-blur-sm">
                     Life
                   </span>
                 </div>
