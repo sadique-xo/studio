@@ -2,6 +2,14 @@
 
 A modern, responsive website showcasing professional web design and development services. Built with Next.js 15, TypeScript, and Tailwind CSS, featuring a sleek UI with smooth animations and interactive elements.
 
+## 📍 Repository Information
+
+- **GitHub Repository**: [https://github.com/sadique-xo/studio](https://github.com/sadique-xo/studio)
+- **Primary Branch**: `studio`
+- **Owner**: [sadique-xo](https://github.com/sadique-xo)
+- **Repository Type**: Public
+- **Main Branch**: `studio` (development branch)
+
 ## 🚀 Features
 
 - **Modern Design**: Clean, professional layout with smooth animations and interactive elements
@@ -48,7 +56,7 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/sadique-xo/studio.git
    cd studio
    ```
 
@@ -101,13 +109,25 @@ The website is fully responsive and optimized for:
 - Tablet (768px - 1199px)
 - Mobile (320px - 767px)
 
+## 🌿 Git Workflow
+
+- **Current Branch**: `studio` (development branch)
+- **Remote Repository**: `https://github.com/sadique-xo/studio.git`
+- **Push Command**: `git push origin studio`
+- **Pull Command**: `git pull origin studio`
+
+### Branch Strategy
+- `studio` - Main development branch
+- All development work happens on the `studio` branch
+- Direct pushes to `studio` branch are allowed for this project
+
 ## 🚀 Deployment
 
 The project is configured for deployment on Vercel:
 
 1. Connect your GitHub repository to Vercel
 2. Configure environment variables if needed
-3. Deploy automatically on push to main branch
+3. Deploy automatically on push to `studio` branch
 
 ## 🤝 Contributing
 
