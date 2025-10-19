@@ -4,15 +4,39 @@ import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { motion } from "framer-motion"
+import { useToast } from "@/hooks/use-toast"
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
+  const { toast } = useToast()
 
-  // useEffect only runs on the client, so now we can safely show the UI
+  // Prevent hydration mismatch by only showing UI after mount
   React.useEffect(() => {
     setMounted(true)
   }, [])
+
+  const toggleTheme = React.useCallback(() => {
+    // Use resolvedTheme to determine current state and toggle accordingly
+    if (resolvedTheme === 'dark') {
+      setTheme('light')
+      toast({
+        title: "Theme Changed",
+        description: "Switched to light mode",
+        duration: 2000,
+      })
+    } else {
+      setTheme('dark')
+      toast({
+        title: "Theme Changed",
+        description: "Switched to dark mode",
+        duration: 2000,
+      })
+    }
+  }, [resolvedTheme, setTheme, toast])
+
+  // Use resolvedTheme to get the actual theme being applied (handles system theme)
+  const isDark = resolvedTheme === 'dark'
 
   if (!mounted) {
     return (
@@ -22,12 +46,6 @@ export function ThemeToggle() {
       </div>
     )
   }
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
-
-  const isDark = theme === 'dark'
 
   return (
     <button
@@ -40,7 +58,9 @@ export function ThemeToggle() {
         {/* Thumb */}
         <motion.div
           className="absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-background flex items-center justify-center"
-          animate={{ x: isDark ? 24 : 0 }}
+          animate={{ 
+            x: isDark ? 24 : 0 
+          }}
           transition={{ type: "spring", stiffness: 500, damping: 30 }}
         >
           {isDark ? (

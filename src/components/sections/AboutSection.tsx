@@ -23,8 +23,8 @@ export default function AboutSection() {
   ];
 
   const [goals, setGoals] = useState([
-    { text: 'Get a new long-term client', completed: true },
-    { text: 'Travel to Miami this summer', completed: false },
+    { text: 'Travel to Himachal Pradesh this year', completed: true },
+    { text: 'Get a new long-term client', completed: false },
     { text: 'Build and sell my first template', completed: false }
   ]);
 
@@ -206,7 +206,7 @@ export default function AboutSection() {
             <CardContent className="p-0 h-full">
               <div className="relative h-full w-full overflow-hidden rounded-2xl">
                 <div className="absolute top-4 left-4 z-10">
-                  <span className="text-lg font-medium text-foreground bg-foreground/20 dark:bg-background/20 px-4 py-2 rounded-full backdrop-blur-sm">
+                  <span className="text-lg font-medium text-white bg-foreground/20 dark:bg-background/20 px-4 py-2 rounded-full backdrop-blur-sm">
                     Life
                   </span>
                 </div>
