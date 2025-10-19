@@ -20,17 +20,17 @@ export default function BookingCtaSection() {
           <span>Book a </span>
           <span className="text-primary underline underline-offset-4 decoration-2">15–min call</span>
         </h2>
-        <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+        <p className="mt-8 text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto">
           Please select the time that fits you or just
         </p>
-        <div className="mt-4 flex items-center justify-center gap-2 text-muted-foreground md:text-xl">
+        <div className="mt-4 flex items-center justify-center gap-2 text-foreground/80 md:text-xl">
           <Mail className="h-5 w-5" />
           <span>Email us at</span>
           <Link
-            href="mailto:hello@sadique.co"
+            href="mailto:sadique.design@icloud.com"
             className="text-primary underline underline-offset-4 decoration-2 font-semibold"
           >
-            hello@sadique.co
+            sadique.design@icloud.com
           </Link>
         </div>
         

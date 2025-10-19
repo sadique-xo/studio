@@ -33,8 +33,8 @@ h6 {
     --accent-foreground: 0 0% 100%; /* White */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
-    --border: 220 100% 8%; /* #0d1321 - Dark Blue */
-    --input: 220 100% 8%; /* #0d1321 - Dark Blue */
+    --border: 220 13% 85%; /* Light gray with subtle blue tint */
+    --input: 220 13% 85%; /* Light gray with subtle blue tint */
     --ring: 220 100% 4%; /* #000814 - Very Dark Blue */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;

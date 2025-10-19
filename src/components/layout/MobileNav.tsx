@@ -10,8 +10,8 @@ import {
   Calendar, 
   Home, 
   User, 
-  Briefcase, 
   Palette,
+  BookOpen,
   ChevronRight,
   Sparkles,
   ArrowRight
@@ -30,18 +30,11 @@ interface MobileNavProps {
 
 const navLinks = [
   { 
-    href: '/#about', 
+    href: '/about', 
     label: 'About', 
     icon: User,
     description: 'Learn about my journey',
     color: 'from-blue-500 to-cyan-500'
-  },
-  { 
-    href: '/#services', 
-    label: 'Services', 
-    icon: Briefcase,
-    description: 'What I can do for you',
-    color: 'from-purple-500 to-pink-500'
   },
   { 
     href: '/#portfolio', 
@@ -49,6 +42,13 @@ const navLinks = [
     icon: Palette,
     description: 'See my recent work',
     color: 'from-emerald-500 to-teal-500'
+  },
+  { 
+    href: 'https://tale.sadique.co', 
+    label: 'Blog', 
+    icon: BookOpen,
+    description: 'Read my thoughts and stories',
+    color: 'from-orange-500 to-red-500'
   },
 ];
 
@@ -107,7 +107,7 @@ export default function MobileNav({ isOpen, onOpenChange }: MobileNavProps) {
       
       <SheetContent 
         side="left" 
-        className="w-full sm:w-80 p-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85 backdrop-blur-2xl border-r border-border/20 [&>button]:hidden"
+        className="w-full sm:w-80 p-0 bg-gradient-to-br from-background/95 via-background/90 to-background/85 backdrop-blur-2xl border-r border-border/35 [&>button]:hidden"
       >
         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         <motion.div
@@ -117,7 +117,7 @@ export default function MobileNav({ isOpen, onOpenChange }: MobileNavProps) {
           className="h-full flex flex-col"
         >
           {/* Header */}
-          <div className="p-6 border-b border-border/20">
+          <div className="p-6 border-b border-border/35">
             <div className="flex items-center justify-between">
               <Link 
                 href="/" 
@@ -172,9 +172,10 @@ export default function MobileNav({ isOpen, onOpenChange }: MobileNavProps) {
                       className={cn(
                         "group relative flex items-center gap-4 p-4 rounded-2xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]",
                         isActive 
-                          ? "bg-primary/10 border border-primary/20" 
-                          : "hover:bg-muted/50 border border-transparent hover:border-border/20"
+                          ? "bg-primary/10 border border-primary/10" 
+                          : "hover:bg-muted/50 border border-transparent hover:border-border/35"
                       )}
+                      {...(link.href.startsWith('http') && { target: '_blank', rel: 'noopener noreferrer' })}
                     >
                       {/* Background gradient on hover */}
                       <motion.div
@@ -230,7 +231,7 @@ export default function MobileNav({ isOpen, onOpenChange }: MobileNavProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.4 }}
-              className="pt-6 border-t border-border/20"
+              className="pt-6 border-t border-border/35"
             >
               <div className="space-y-3">
                 <div className="flex items-center gap-2 mb-4">
@@ -274,7 +275,7 @@ export default function MobileNav({ isOpen, onOpenChange }: MobileNavProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.6 }}
-            className="p-6 border-t border-border/20"
+            className="p-6 border-t border-border/35"
           >
             <div className="text-center">
               <Badge variant="secondary" className="mb-2">

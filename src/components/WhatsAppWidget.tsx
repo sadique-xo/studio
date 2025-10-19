@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { X, MessageCircle, Phone, Mail } from "lucide-react";
+import { X, MessageCircle, Phone, Info } from "lucide-react";
 import { siteSettings } from "@/lib/placeholder-data";
 import Image from "next/image";
 
@@ -20,7 +20,7 @@ export default function WhatsAppWidget() {
         <div className="relative">
           <Button
             size="icon"
-            className="relative rounded-full w-12 h-12 sm:w-14 sm:h-14 bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl transform hover:scale-110 transition-all duration-300 p-0 border-2 border-border"
+            className="relative rounded-full w-12 h-12 sm:w-14 sm:h-14 bg-primary hover:bg-primary/90 text-primary-foreground shadow-2xl transform hover:scale-110 transition-all duration-300 p-0"
             onClick={toggleOpen}
           >
             {isOpen ? (
@@ -79,7 +79,7 @@ export default function WhatsAppWidget() {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/20"
+                  className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/35"
                   onClick={() => {
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I'd like to connect over a call to discuss my project.")}`;
                     window.open(whatsappUrl, "_blank");
@@ -92,15 +92,15 @@ export default function WhatsAppWidget() {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/20"
+                  className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/35"
                   onClick={() => {
-                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I want to know more about your services.")}`;
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I'd like to connect with you.")}`;
                     window.open(whatsappUrl, "_blank");
                     setIsOpen(false);
                   }}
                 >
-                  <Mail className="w-3 h-3 mr-1" />
-                  I want to know more
+                  <Info className="w-3 h-3 mr-1" />
+                  I want to know more.
                 </Button>
               </div>
             </CardContent>
