@@ -1,29 +1,38 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Toaster } from "@/components/ui/toaster";
-import Header from '@/components/layout/Header';
+import { TooltipProvider } from "@/components/ui/tooltip";
+import Navbar from '@/components/navbar';
 import Footer from '@/components/layout/Footer';
 import BookingCtaSection from '@/components/sections/BookingCtaSection';
 import './globals.css';
-import { Bricolage_Grotesque, Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import WhatsAppWidget from '@/components/WhatsAppWidget';
-import InteractiveDots from '@/components/InteractiveDots';
 import PerformanceOptimizer from '@/components/PerformanceOptimizer';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
-const fontHeadline = Bricolage_Grotesque({
-  subsets: ['latin'],
+const fontHeadline = localFont({
+  src: '../../public/fonts/ClashDisplay-Semibold.ttf',
   variable: '--font-headline',
-  weight: ['400', '500', '700', '800'],
+  weight: '600',
 });
 
-const fontBody = Inter({
-  subsets: ['latin'],
+const fontBody = localFont({
+  src: '../../public/fonts/CabinetGrotesk-Medium.ttf',
   variable: '--font-body',
+  weight: '500',
 });
 
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sadique.co'),
   title: 'Sadique | Modern Web Designer - From wireframes to real things people use',
   description: 'A modern web designer with 5+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire. Specializing in real estate, homestays, and Airbnb websites.',
   keywords: ['web designer', 'UI/UX designer', 'real estate websites', 'Airbnb websites', 'homestay websites', 'modern web design', 'freelance designer'],
@@ -64,11 +73,6 @@ export const metadata: Metadata = {
     title: 'Sadique | Modern Web Designer - From wireframes to real things people use',
     description: 'A modern web designer with 5+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.',
     images: ['/Profile-Sadique.jpeg'],
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
   },
   icons: {
     icon: '/Profile.PNG?v=1',
@@ -166,115 +170,135 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Sadique - Modern Web Designer",
-            "url": "https://sadique.co",
-            "description": "Professional web design services for real estate, Airbnb, and homestay properties. Modern, responsive designs that convert visitors into bookings.",
-            "author": {
-              "@type": "Person",
-              "name": "Sadique"
-            },
-            "publisher": {
-              "@type": "Person",
-              "name": "Sadique"
-            },
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://sadique.co/projects?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            },
-            "mainEntity": {
-              "@type": "Organization",
-              "name": "Sadique Web Design",
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Sadique - Modern Web Designer",
               "url": "https://sadique.co",
-              "logo": "https://sadique.co/Profile.PNG",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-XXXXXXXXXX",
-                "contactType": "customer service",
-                "email": "sadique.design@icloud.com"
+              "description": "Professional web design services for real estate, Airbnb, and homestay properties. Modern, responsive designs that convert visitors into bookings.",
+              "author": {
+                "@type": "Person",
+                "name": "Sadique"
               },
-              "sameAs": [
-                "https://github.com/sadique-xo",
-                "https://www.linkedin.com/in/sadiqueh/",
-                "https://x.com/notsadique",
-                "https://dribbble.com/designbysadique"
-              ]
-            }
-          }) }}
+              "publisher": {
+                "@type": "Person",
+                "name": "Sadique"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://sadique.co/projects?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              },
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Sadique Web Design",
+                "url": "https://sadique.co",
+                "logo": "https://sadique.co/Profile.PNG",
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-XXXXXXXXXX",
+                  "contactType": "customer service",
+                  "email": "sadique.design@icloud.com"
+                },
+                "sameAs": [
+                  "https://github.com/sadique-xo",
+                  "https://www.linkedin.com/in/sadiqueh/",
+                  "https://x.com/notsadique",
+                  "https://dribbble.com/designbysadique"
+                ]
+              }
+            })
+          }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Web Design Services",
-            "description": "Professional web design services specializing in real estate, Airbnb, and homestay websites. Modern, responsive designs that drive bookings and conversions.",
-            "provider": {
-              "@type": "Person",
-              "name": "Sadique"
-            },
-            "areaServed": "Worldwide",
-            "serviceType": "Web Design",
-            "category": "Design Services",
-            "offers": {
-              "@type": "Offer",
-              "description": "Custom web design solutions for property owners and hospitality businesses",
-              "priceRange": "Contact for pricing",
-              "availability": "https://schema.org/InStock"
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
               "name": "Web Design Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Real Estate Website Design",
-                    "description": "Custom websites for real estate properties and agents"
+              "description": "Professional web design services specializing in real estate, Airbnb, and homestay websites. Modern, responsive designs that drive bookings and conversions.",
+              "provider": {
+                "@type": "Person",
+                "name": "Sadique"
+              },
+              "areaServed": "Worldwide",
+              "serviceType": "Web Design",
+              "category": "Design Services",
+              "offers": {
+                "@type": "Offer",
+                "description": "Custom web design solutions for property owners and hospitality businesses",
+                "priceRange": "Contact for pricing",
+                "availability": "https://schema.org/InStock"
+              },
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Web Design Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Real Estate Website Design",
+                      "description": "Custom websites for real estate properties and agents"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Airbnb Website Design",
+                      "description": "Professional websites for Airbnb hosts and property managers"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Homestay Website Design",
+                      "description": "Custom websites for homestay and vacation rental properties"
+                    }
                   }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Airbnb Website Design",
-                    "description": "Professional websites for Airbnb hosts and property managers"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Homestay Website Design",
-                    "description": "Custom websites for homestay and vacation rental properties"
-                  }
-                }
-              ]
-            }
-          }) }}
+                ]
+              }
+            })
+          }}
         />
       </head>
-      <body suppressHydrationWarning className={cn("font-body antialiased", fontHeadline.variable, fontBody.variable)}>
+      <body suppressHydrationWarning className={cn("font-body antialiased min-h-screen bg-background relative", fontHeadline.variable, fontBody.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <PerformanceOptimizer />
-          <InteractiveDots />
-          <Header />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <BookingCtaSection />
-          <Footer />
-          <WhatsAppWidget />
-          <Toaster />
+          <TooltipProvider delayDuration={0}>
+            <PerformanceOptimizer />
+            {/* FlickeringGrid at top only - 100px with fade */}
+            <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
+              <FlickeringGrid
+                className="h-full w-full"
+                squareSize={2}
+                gridGap={2}
+                color="#6B7280"
+                maxOpacity={0.5}
+                flickerChance={0.3}
+              />
+              {/* Fade overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
+            </div>
+            <div className="relative z-10">
+              <main className="flex-grow pb-24">
+                {children}
+              </main>
+              <BookingCtaSection />
+              <Footer />
+            </div>
+            <Navbar />
+            <WhatsAppWidget />
+            <Toaster />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>
