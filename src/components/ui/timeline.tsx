@@ -72,7 +72,7 @@ export function Timeline({
         >
             <div
                 className={cn(
-                    "relative [&>*:last-child_[data-timeline-line]]:hidden",
+                    "relative [&>*:last-child_[data-timeline-line]]:hidden [&>*:first-child_[data-timeline-line]]:top-5",
                     orientation === "vertical" && "space-y-8 w-full",
                     orientation === "horizontal" && "flex flex-row gap-8 h-full"
                 )}

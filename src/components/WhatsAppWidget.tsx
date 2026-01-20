@@ -16,7 +16,7 @@ export default function WhatsAppWidget() {
   return (
     <>
       {/* Floating WhatsApp Button */}
-      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 hidden md:block">
         <div className="relative">
           <Button
             size="icon"
@@ -34,18 +34,18 @@ export default function WhatsAppWidget() {
 
       {/* Chat Widget */}
       {isOpen && (
-        <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-50 animate-in slide-in-from-bottom-2 duration-300">
+        <div className="fixed bottom-20 right-4 sm:bottom-24 sm:right-6 z-50 animate-in slide-in-from-bottom-2 duration-300 hidden md:block">
           <Card className="w-72 sm:w-80 shadow-2xl rounded-2xl border border-border/50 bg-card/95 backdrop-blur-sm overflow-hidden">
             {/* Header */}
             <CardHeader className="flex flex-row items-center justify-between bg-primary p-4 rounded-t-2xl text-primary-foreground">
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <Image 
-                    src="/Profile.PNG" 
-                    alt={siteSettings.title} 
-                    width={40} 
-                    height={40} 
-                    className="rounded-full border-2 border-border/30" 
+                  <Image
+                    src="/Profile.PNG"
+                    alt={siteSettings.title}
+                    width={40}
+                    height={40}
+                    className="rounded-full border-2 border-border/30"
                   />
                 </div>
                 <div>
@@ -76,9 +76,9 @@ export default function WhatsAppWidget() {
 
               {/* Quick Actions - Bottom and Centered */}
               <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mt-auto">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/35"
                   onClick={() => {
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I'd like to connect over a call to discuss my project.")}`;
@@ -89,9 +89,9 @@ export default function WhatsAppWidget() {
                   <Phone className="w-3 h-3 mr-1" />
                   Call me
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/35"
                   onClick={() => {
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I'd like to connect with you.")}`;
