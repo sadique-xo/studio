@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import WhatsAppWidget from '@/components/WhatsAppWidget';
 import PerformanceOptimizer from '@/components/PerformanceOptimizer';
+import { PageTransitionProvider } from '@/components/PageTransitionProvider';
 import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 const fontHeadline = localFont({
@@ -34,7 +35,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://sadique.co'),
   title: 'Sadique | Modern Web Designer - From wireframes to real things people use',
-  description: 'A modern web designer with 5+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire. Specializing in real estate, homestays, and Airbnb websites.',
+  description: 'A modern web designer with 7+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire. Specializing in real estate, homestays, and Airbnb websites.',
   keywords: ['web designer', 'UI/UX designer', 'real estate websites', 'Airbnb websites', 'homestay websites', 'modern web design', 'freelance designer'],
   authors: [{ name: 'Sadique' }],
   creator: 'Sadique',
@@ -56,10 +57,10 @@ export const metadata: Metadata = {
     url: 'https://sadique.co',
     siteName: 'Sadique - Modern Web Designer',
     title: 'Sadique | Modern Web Designer - From wireframes to real things people use',
-    description: 'A modern web designer with 5+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.',
+    description: 'A modern web designer with 7+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.',
     images: [
       {
-        url: '/Profile-Sadique.jpeg',
+        url: '/social-banner.png',
         width: 1200,
         height: 630,
         alt: 'Sadique - Modern Web Designer',
@@ -71,8 +72,8 @@ export const metadata: Metadata = {
     site: '@notsadique',
     creator: '@notsadique',
     title: 'Sadique | Modern Web Designer - From wireframes to real things people use',
-    description: 'A modern web designer with 5+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.',
-    images: ['/Profile-Sadique.jpeg'],
+    description: 'A modern web designer with 7+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.',
+    images: ['/social-banner.png'],
   },
   icons: {
     icon: '/Profile.PNG?v=1',
@@ -100,7 +101,7 @@ export default function RootLayout({
     "@type": "Person",
     "name": "Sadique",
     "jobTitle": "Web Designer",
-    "description": "A modern web designer with 5+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.",
+    "description": "A modern web designer with 7+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.",
     "url": "https://sadique.co",
     "image": "https://sadique.co/Profile-Sadique.jpeg",
     "sameAs": [
@@ -156,7 +157,7 @@ export default function RootLayout({
       "name": "Self-taught Designer"
     },
     "award": [
-      "5+ years of experience in web design",
+      "7+ years of experience in web design",
       "Specialized in real estate and hospitality websites"
     ]
   };
@@ -274,30 +275,32 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TooltipProvider delayDuration={0}>
-            <PerformanceOptimizer />
-            {/* FlickeringGrid at top only - 100px with fade */}
-            <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
-              <FlickeringGrid
-                className="h-full w-full"
-                squareSize={2}
-                gridGap={2}
-                color="#6B7280"
-                maxOpacity={0.5}
-                flickerChance={0.3}
-              />
-              {/* Fade overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
-            </div>
-            <div className="relative z-10">
-              <main className="flex-grow pb-24">
-                {children}
-              </main>
-              <BookingCtaSection />
+            <PageTransitionProvider minLoadingTime={800}>
+              <PerformanceOptimizer />
+              {/* FlickeringGrid at top only - 100px with fade */}
+              <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
+                <FlickeringGrid
+                  className="h-full w-full"
+                  squareSize={2}
+                  gridGap={2}
+                  color="#6B7280"
+                  maxOpacity={0.5}
+                  flickerChance={0.3}
+                />
+                {/* Fade overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background" />
+              </div>
+              <div className="relative z-10">
+                <main className="flex-grow pb-24">
+                  {children}
+                </main>
+                <BookingCtaSection />
 
-            </div>
-            <Navbar />
-            <WhatsAppWidget />
-            <Toaster />
+              </div>
+              <Navbar />
+              <WhatsAppWidget />
+              <Toaster />
+            </PageTransitionProvider>
           </TooltipProvider>
         </ThemeProvider>
       </body>

@@ -29,7 +29,7 @@ export default function AboutSection() {
   ]);
 
   const toggleGoal = (index: number) => {
-    setGoals(prev => prev.map((goal, i) => 
+    setGoals(prev => prev.map((goal, i) =>
       i === index ? { ...goal, completed: !goal.completed } : goal
     ));
   };
@@ -86,11 +86,11 @@ export default function AboutSection() {
                     Web Designer
                   </span>
                   <span className="px-3 py-1 profile-badge rounded-full text-sm">
-                    5+ Years Experience
+                    7+ Years Experience
                   </span>
                 </div>
                 <p className="text-card-foreground text-left leading-relaxed">
-                  A modern web designer with a passion for creativity and innovation. I'm a freelancer who's passionate about creating visually stunning and user-friendly designs that captivate and inspire.
+                  I'm a web designer who transforms ideas into visually stunning digital experiences. Through human-centered design, I craft intuitive interfaces that push creative boundaries, foster genuine connection, and make users feel truly understood.
                 </p>
                 <div className="mt-4 flex items-center gap-3">
                   <a
@@ -181,19 +181,17 @@ export default function AboutSection() {
                 <p className="text-muted-foreground text-sm mb-4">A few things I'm aiming for.</p>
                 <div className="space-y-3">
                   {goals.map((goal, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className="flex items-center gap-3 cursor-pointer hover:bg-muted/50 p-2 rounded-lg hover:rounded-xl transition-all duration-200"
                       onClick={() => toggleGoal(index)}
                     >
-                      <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${
-                        goal.completed ? 'bg-muted-foreground border-muted-foreground' : 'border-muted-foreground'
-                      }`}>
+                      <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${goal.completed ? 'bg-muted-foreground border-muted-foreground' : 'border-muted-foreground'
+                        }`}>
                         {goal.completed && <CheckCircle className="w-3 h-3 text-card" />}
                       </div>
-                      <span className={`text-card-foreground text-sm transition-colors duration-200 ${
-                        goal.completed ? 'line-through opacity-70' : ''
-                      }`}>{goal.text}</span>
+                      <span className={`text-card-foreground text-sm transition-colors duration-200 ${goal.completed ? 'line-through opacity-70' : ''
+                        }`}>{goal.text}</span>
                     </div>
                   ))}
                 </div>
@@ -213,9 +211,8 @@ export default function AboutSection() {
                 {cityImages.map((image, index) => (
                   <div
                     key={image.id}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
-                      index === currentSlide ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                      }`}
                   >
                     <Image
                       src={image.url}
