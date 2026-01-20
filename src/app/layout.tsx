@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from '@/components/navbar';
-import Footer from '@/components/layout/Footer';
+
 import BookingCtaSection from '@/components/sections/BookingCtaSection';
 import './globals.css';
 import localFont from 'next/font/local';
@@ -293,7 +293,7 @@ export default function RootLayout({
                 {children}
               </main>
               <BookingCtaSection />
-              <Footer />
+
             </div>
             <Navbar />
             <WhatsAppWidget />

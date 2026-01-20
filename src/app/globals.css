@@ -58,6 +58,8 @@ h6 {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --grid-line: rgba(23, 23, 23, 0.05);
+    --spotlight-color: rgba(0, 0, 0, 0.05);
   }
   .dark {
     --background: 0 0% 0%; /* #000000 - Pure Black */
@@ -79,6 +81,8 @@ h6 {
     --border: 0 0% 20%; /* #333333 - Neutral Border */
     --input: 0 0% 20%; /* #333333 - Neutral Border */
     --ring: 0 0% 100%; /* White */
+    --grid-line: #171717;
+    --spotlight-color: white;
   }
 }
 

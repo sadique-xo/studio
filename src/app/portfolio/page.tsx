@@ -37,7 +37,7 @@ export default function PortfolioPage() {
                         <div className="gap-2 flex flex-col order-2 md:order-1">
                             <BlurFadeText
                                 delay={BLUR_FADE_DELAY}
-                                className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
+                                className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
                                 yOffset={8}
                                 text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
                             />
@@ -77,48 +77,53 @@ export default function PortfolioPage() {
                     <BlurFade delay={BLUR_FADE_DELAY * 5}>
                         <h2 className="text-xl font-bold">Work Experience</h2>
                     </BlurFade>
-                    <div className="flex flex-col gap-8">
+                    <Timeline className="p-0">
                         {DATA.work.map((work, index) => (
-                            <BlurFade
-                                key={work.company}
-                                delay={BLUR_FADE_DELAY * 6 + index * 0.05}
-                            >
-                                <Link
-                                    href={work.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-start gap-x-3 justify-between group"
+                            <TimelineItem key={`${work.company}-${work.title}-${index}`}>
+                                <BlurFade
+                                    delay={BLUR_FADE_DELAY * 6 + index * 0.05}
                                 >
-                                    <div className="flex items-start gap-x-3 flex-1 min-w-0">
-                                        {work.logoUrl ? (
-                                            <img
-                                                src={work.logoUrl}
-                                                alt={work.company}
-                                                className="size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-cover flex-none"
-                                            />
-                                        ) : (
-                                            <div className="size-10 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
-                                        )}
-                                        <div className="flex-1 min-w-0 flex flex-col gap-1">
-                                            <div className="font-semibold leading-none flex items-center gap-2">
-                                                {work.company}
-                                                <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden />
+                                    <div className="flex items-start justify-between gap-x-3 group">
+                                        <TimelineConnectItem className="flex items-start justify-center w-10">
+                                            <Link href={work.href} target="_blank" rel="noopener noreferrer">
+                                                {work.logoUrl ? (
+                                                    <img
+                                                        src={work.logoUrl}
+                                                        alt={work.company}
+                                                        className="size-10 p-1 rounded-full shadow ring-1 ring-border overflow-hidden object-cover flex-none bg-background z-10"
+                                                    />
+                                                ) : (
+                                                    <div className="size-10 p-1 rounded-full shadow ring-1 ring-border bg-muted flex-none z-10" />
+                                                )}
+                                            </Link>
+                                        </TimelineConnectItem>
+                                        <Link
+                                            href={work.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex-1 flex items-start justify-between gap-x-3 min-w-0"
+                                        >
+                                            <div className="flex-1 min-w-0 flex flex-col gap-1">
+                                                <div className="font-semibold leading-none flex items-center gap-2">
+                                                    {work.company}
+                                                    <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden />
+                                                </div>
+                                                <div className="font-sans text-sm text-muted-foreground">
+                                                    {work.title}
+                                                </div>
+                                                <p className="text-xs text-muted-foreground mt-1">{work.description}</p>
                                             </div>
-                                            <div className="font-sans text-sm text-muted-foreground">
-                                                {work.title}
+                                            <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
+                                                <span>
+                                                    {work.start} - {work.end}
+                                                </span>
                                             </div>
-                                            <p className="text-xs text-muted-foreground mt-1">{work.description}</p>
-                                        </div>
+                                        </Link>
                                     </div>
-                                    <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
-                                        <span>
-                                            {work.start} - {work.end}
-                                        </span>
-                                    </div>
-                                </Link>
-                            </BlurFade>
+                                </BlurFade>
+                            </TimelineItem>
                         ))}
-                    </div>
+                    </Timeline>
                 </div>
             </section>
 
@@ -128,47 +133,52 @@ export default function PortfolioPage() {
                     <BlurFade delay={BLUR_FADE_DELAY * 7}>
                         <h2 className="text-xl font-bold">Education</h2>
                     </BlurFade>
-                    <div className="flex flex-col gap-8">
+                    <Timeline className="p-0">
                         {DATA.education.map((education, index) => (
-                            <BlurFade
-                                key={education.school}
-                                delay={BLUR_FADE_DELAY * 8 + index * 0.05}
-                            >
-                                <Link
-                                    href={education.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-x-3 justify-between group"
+                            <TimelineItem key={education.school}>
+                                <BlurFade
+                                    delay={BLUR_FADE_DELAY * 8 + index * 0.05}
                                 >
-                                    <div className="flex items-center gap-x-3 flex-1 min-w-0">
-                                        {education.logoUrl ? (
-                                            <img
-                                                src={education.logoUrl}
-                                                alt={education.school}
-                                                className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
-                                            />
-                                        ) : (
-                                            <div className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
-                                        )}
-                                        <div className="flex-1 min-w-0 flex flex-col gap-0.5">
-                                            <div className="font-semibold leading-none flex items-center gap-2">
-                                                {education.school}
-                                                <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden />
+                                    <div className="flex items-center justify-between gap-x-3 group">
+                                        <TimelineConnectItem>
+                                            <Link href={education.href} target="_blank" rel="noopener noreferrer">
+                                                {education.logoUrl ? (
+                                                    <img
+                                                        src={education.logoUrl}
+                                                        alt={education.school}
+                                                        className="size-10 p-1 rounded-full shadow ring-1 ring-border overflow-hidden object-contain flex-none bg-background z-10"
+                                                    />
+                                                ) : (
+                                                    <div className="size-10 p-1 rounded-full shadow ring-1 ring-border bg-muted flex-none z-10" />
+                                                )}
+                                            </Link>
+                                        </TimelineConnectItem>
+                                        <Link
+                                            href={education.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex-1 flex items-center justify-between gap-x-3 min-w-0"
+                                        >
+                                            <div className="flex-1 min-w-0 flex flex-col gap-0.5">
+                                                <div className="font-semibold leading-none flex items-center gap-2">
+                                                    {education.school}
+                                                    <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200" aria-hidden />
+                                                </div>
+                                                <div className="font-sans text-sm text-muted-foreground">
+                                                    {education.degree}
+                                                </div>
                                             </div>
-                                            <div className="font-sans text-sm text-muted-foreground">
-                                                {education.degree}
+                                            <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
+                                                <span>
+                                                    {education.start} - {education.end}
+                                                </span>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </div>
-                                    <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
-                                        <span>
-                                            {education.start} - {education.end}
-                                        </span>
-                                    </div>
-                                </Link>
-                            </BlurFade>
+                                </BlurFade>
+                            </TimelineItem>
                         ))}
-                    </div>
+                    </Timeline>
                 </div>
             </section>
 
@@ -196,9 +206,9 @@ export default function PortfolioPage() {
                 <BlurFade delay={BLUR_FADE_DELAY * 11}>
                     <div className="flex min-h-0 flex-col gap-y-8">
                         <div className="flex flex-col gap-y-4 items-center justify-center">
-                            <SectionBadge label="My Projects" />
-                            <div className="flex flex-col gap-y-3 items-center justify-center">
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Check out my latest work</h2>
+                            <SectionBadge label="Featured Projects" />
+                            <div className="flex flex-col gap-y-4 items-center justify-center">
+                                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center">Check out my latest work</h2>
                                 <p className="text-muted-foreground md:text-lg lg:text-base xl:text-lg text-balance text-center">
                                     I&apos;ve worked on a variety of projects, from simple websites to complex web applications. Here are a few of my favorites.
                                 </p>
@@ -234,8 +244,8 @@ export default function PortfolioPage() {
                         <div className="flex min-h-0 flex-col gap-y-8 w-full overflow-hidden">
                             <div className="flex flex-col gap-y-4 items-center justify-center">
                                 <SectionBadge label="Hackathons" />
-                                <div className="flex flex-col gap-y-3 items-center justify-center">
-                                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">I like building things</h2>
+                                <div className="flex flex-col gap-y-4 items-center justify-center">
+                                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center">I like building things</h2>
                                     <p className="text-muted-foreground md:text-lg lg:text-base xl:text-lg text-balance text-center">
                                         During my time in university, I attended {DATA.hackathons.length}+ hackathons. People from around the country would come together and build incredible things in 2-3 days. It was eye-opening to see the endless possibilities brought to life by a group of motivated and passionate individuals.
                                     </p>
