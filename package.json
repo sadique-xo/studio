@@ -51,6 +51,7 @@
     "lucide-react": "^0.475.0",
     "motion": "^12.27.1",
     "next": "^15.5.5",
+    "next": "15.5.9",
     "next-themes": "^0.3.0",
     "ogl": "^1.0.11",
     "patch-package": "^8.0.0",
