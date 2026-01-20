@@ -19,9 +19,9 @@ export const DATA = {
     location: "India",
     locationLink: "https://www.google.com/maps/place/india",
     description:
-        "Modern Web Designer with 5+ years experience. Passionate about creating visually stunning and user-friendly designs that captivate and inspire.",
+        "Modern Web Designer with 7+ years experience. Passionate about creating visually stunning and user-friendly designs that captivate and inspire.",
     summary:
-        "I'm a freelance web designer specializing in real estate, Airbnb, and homestay websites. From wireframes to real things people use — I transform ideas into beautiful, functional digital experiences. My process combines research, design, and development to create websites that not only look great but also drive conversions.",
+        "I'm a web designer who transforms ideas into visually stunning digital experiences. Through human-centered design, I craft intuitive interfaces that push creative boundaries, foster genuine connection, and make users feel truly understood.",
     avatarUrl: "/Profile-Sadique.jpeg",
     skills: [
         { name: "React", icon: ReactLight },

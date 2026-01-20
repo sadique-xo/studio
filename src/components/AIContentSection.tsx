@@ -23,7 +23,7 @@ export default function AIContentSection() {
               <div className="mx-auto w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mb-4">
                 <Award className="w-6 h-6 text-blue-600 dark:text-blue-400" />
               </div>
-              <CardTitle className="text-xl">5+ Years Experience</CardTitle>
+              <CardTitle className="text-xl">7+ Years Experience</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600 dark:text-gray-300">
@@ -131,7 +131,7 @@ export default function AIContentSection() {
                   <Badge variant="secondary">Lead Generation</Badge>
                 </div>
               </div>
-              
+
               <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Airbnb & Short-term Rentals</h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
@@ -143,7 +143,7 @@ export default function AIContentSection() {
                   <Badge variant="secondary">Local Attractions</Badge>
                 </div>
               </div>
-              
+
               <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Homestays & B&Bs</h4>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">

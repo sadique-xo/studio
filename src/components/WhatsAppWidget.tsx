@@ -41,7 +41,7 @@ export default function WhatsAppWidget() {
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <Image
-                    src="/Profile.PNG"
+                    src="/sadique_avatar_300px_circle.png"
                     alt={siteSettings.title}
                     width={40}
                     height={40}
@@ -51,7 +51,7 @@ export default function WhatsAppWidget() {
                 <div>
                   <CardTitle className="text-base font-bold text-primary-foreground">Sadique</CardTitle>
                   <div className="text-xs text-primary-foreground/80 flex items-center gap-1">
-                    <div className="w-2 h-2 bg-primary-foreground/60 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     Online now
                   </div>
                 </div>

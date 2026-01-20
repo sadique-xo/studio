@@ -4,7 +4,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'About Sadique - Professional Web Designer | Services & Expertise',
-  description: 'Learn about Sadique\'s web design services, expertise, and why clients choose him for real estate, Airbnb, and homestay websites. 5+ years of experience in modern web design.',
+  description: 'Learn about Sadique\'s web design services, expertise, and why clients choose him for real estate, Airbnb, and homestay websites. 7+ years of experience in modern web design.',
   keywords: [
     'about sadique',
     'web designer profile',
@@ -45,19 +45,19 @@ export default function AboutPage() {
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-6xl mx-auto">
-          <Breadcrumb 
+          <Breadcrumb
             items={[
               { label: 'About' }
             ]}
             className="mb-8"
           />
-          
+
           <header className="text-center mb-16">
             <h1 className="font-headline text-4xl font-bold text-primary md:text-6xl mb-6">
               About Sadique
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A passionate web designer with 5+ years of experience, specializing in creating 
+              A passionate web designer with 7+ years of experience, specializing in creating
               stunning digital experiences for real estate, Airbnb, and homestay properties.
             </p>
           </header>

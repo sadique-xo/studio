@@ -4,14 +4,14 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Sadique - Modern Web Designer',
     short_name: 'Sadique',
-    description: 'A modern web designer with 5+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.',
+    description: 'A modern web designer with 7+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: '#30475E',
     icons: [
       {
-        src: '/Profile.PNG',
+        src: '/sadique_avatar_300px_circle.png',
         sizes: 'any',
         type: 'image/png',
       },
