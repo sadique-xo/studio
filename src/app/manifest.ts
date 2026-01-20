@@ -11,7 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#30475E',
     icons: [
       {
-        src: '/Profile.PNG',
+        src: '/sadique_avatar_300px_circle.png',
         sizes: 'any',
         type: 'image/png',
       },

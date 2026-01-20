@@ -76,13 +76,13 @@ export const metadata: Metadata = {
     images: ['/social-banner.png'],
   },
   icons: {
-    icon: '/Profile.PNG?v=1',
-    shortcut: '/Profile.PNG?v=1',
-    apple: '/Profile.PNG?v=1',
+    icon: '/sadique_avatar_300px_circle.png',
+    shortcut: '/sadique_avatar_300px_circle.png',
+    apple: '/sadique_avatar_300px_circle.png',
     other: [
       {
         rel: 'apple-touch-icon-precomposed',
-        url: '/Profile.PNG?v=1',
+        url: '/sadique_avatar_300px_circle.png',
       },
     ],
   },
@@ -103,7 +103,7 @@ export default function RootLayout({
     "jobTitle": "Web Designer",
     "description": "A modern web designer with 7+ years experience, passionate about creating visually stunning and user-friendly designs that captivate and inspire.",
     "url": "https://sadique.co",
-    "image": "https://sadique.co/Profile-Sadique.jpeg",
+    "image": "https://sadique.co/sadique_avatar_300px_circle.png",
     "sameAs": [
       "https://github.com/sadique-xo",
       "https://www.linkedin.com/in/sadiqueh/",
@@ -195,7 +195,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "Sadique Web Design",
                 "url": "https://sadique.co",
-                "logo": "https://sadique.co/Profile.PNG",
+                "logo": "https://sadique.co/sadique_avatar_300px_circle.png",
                 "contactPoint": {
                   "@type": "ContactPoint",
                   "telephone": "+91-XXXXXXXXXX",
