@@ -119,7 +119,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: '3',
-    name: 'Shakeel Akhtar',
+    name: 'Farhan Akhtar',
     role: 'Founder, Time House',
     quote: 'We\'ve worked with several marketing companies in the past that didn\'t deliver. Sadique did. He understood our vision and brought it to life with a design that finally makes sense for our business.',
     avatarUrl: '/testimonials/Shakeel 3.jpg',
