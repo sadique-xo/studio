@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { Mail } from 'lucide-react';
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
+import { sendGAEvent } from "@/lib/analytics";
 
 export default function BookingCtaSection() {
   useEffect(() => {
     (async function () {
-      const cal = await getCalApi({"namespace":"meet"});
-      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      const cal = await getCalApi({ "namespace": "meet" });
+      cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
     })();
   }, []);
 
@@ -29,18 +30,23 @@ export default function BookingCtaSection() {
           <Link
             href="mailto:sadique.design@icloud.com"
             className="text-primary underline underline-offset-4 decoration-2 font-semibold"
+            onClick={() => sendGAEvent({
+              action: 'email_click',
+              category: 'Contact',
+              label: 'sadique.design@icloud.com',
+            })}
           >
             sadique.design@icloud.com
           </Link>
         </div>
-        
+
         {/* Cal.com Booking Widget */}
         <div className="mt-12 max-w-4xl mx-auto">
-          <Cal 
+          <Cal
             namespace="meet"
             calLink="sadique/meet"
-            style={{width:"100%",height:"100%",overflow:"scroll"}}
-            config={{"layout":"month_view"}}
+            style={{ width: "100%", height: "100%", overflow: "scroll" }}
+            config={{ "layout": "month_view" }}
           />
         </div>
       </div>

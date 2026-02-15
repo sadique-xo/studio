@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Toaster } from "@/components/ui/toaster";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from '@/components/navbar';
 import Footer from '@/components/layout/Footer';
@@ -310,6 +311,7 @@ export default function RootLayout({
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   );
