@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Toaster } from "@/components/ui/toaster";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from '@/components/navbar';
 
@@ -303,6 +305,8 @@ export default function RootLayout({
             </PageTransitionProvider>
           </TooltipProvider>
         </ThemeProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
