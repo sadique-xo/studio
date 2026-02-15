@@ -272,6 +272,7 @@ export default function RootLayout({
             })
           }}
         />
+        <script async src="https://tally.so/widgets/embed.js"></script>
       </head>
       <body suppressHydrationWarning className={cn("font-body antialiased min-h-screen bg-background relative", fontHeadline.variable, fontBody.variable)}>
         <ThemeProvider

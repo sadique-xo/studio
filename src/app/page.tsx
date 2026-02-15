@@ -5,10 +5,12 @@ import AboutSection from '@/components/sections/AboutSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import IdeaForm from '@/components/ui/idea-form';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import AuditBanner from '@/components/AuditBanner';
 
 export default function Home() {
   return (
     <>
+      <AuditBanner />
       <HeroSection />
       <AboutSection />
       <TestimonialsSection />
