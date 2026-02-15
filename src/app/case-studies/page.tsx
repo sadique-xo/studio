@@ -193,7 +193,7 @@ function CaseStudyCard({
                             {study.tags.map((tag) => (
                                 <span
                                     key={tag}
-                                    className="px-3 py-1 rounded-full text-xs font-medium bg-muted/50 dark:bg-muted/30 text-muted-foreground border border-border/40 dark:border-border/20"
+                                    className="px-3 py-1 rounded-full text-xs font-medium bg-foreground/[0.06] dark:bg-muted/30 text-foreground/60 dark:text-muted-foreground border border-foreground/[0.08] dark:border-border/20"
                                 >
                                     {tag}
                                 </span>
@@ -245,11 +245,11 @@ function CaseStudyDrawer({
                         <div className="absolute top-4 left-4 z-10">
                             <motion.button
                                 onClick={onClose}
-                                className="w-10 h-10 rounded-full bg-muted/80 backdrop-blur-md flex items-center justify-center border border-border/50 hover:bg-muted transition-colors"
+                                className="w-10 h-10 rounded-full bg-white/20 dark:bg-black/30 backdrop-blur-xl flex items-center justify-center border border-white/30 dark:border-white/10 shadow-lg hover:bg-white/30 dark:hover:bg-black/40 transition-colors"
                                 whileHover={{ scale: 1.1, rotate: 90 }}
                                 whileTap={{ scale: 0.9 }}
                             >
-                                <X className="w-4 h-4" />
+                                <X className="w-4 h-4 text-white drop-shadow-md" />
                             </motion.button>
                         </div>
 
@@ -353,7 +353,7 @@ function CaseStudyDrawer({
                                         {study.tags.map((tag, i) => (
                                             <motion.span
                                                 key={tag}
-                                                className="px-4 py-1.5 rounded-full text-sm font-medium bg-muted/50 dark:bg-muted/30 text-foreground/70 border border-border/40 dark:border-border/20"
+                                                className="px-4 py-1.5 rounded-full text-sm font-medium bg-foreground/[0.06] dark:bg-muted/30 text-foreground/60 dark:text-foreground/70 border border-foreground/[0.08] dark:border-border/20"
                                                 initial={{ opacity: 0, scale: 0.8 }}
                                                 animate={{ opacity: 1, scale: 1 }}
                                                 transition={{ delay: 0.4 + i * 0.05 }}

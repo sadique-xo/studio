@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -106,8 +106,8 @@ function MenuItem({
                     {/* Index */}
                     <span
                         className={`text-sm font-mono transition-opacity duration-200 ${isHovered
-                                ? "opacity-60"
-                                : "opacity-25"
+                            ? "opacity-60"
+                            : "opacity-25"
                             } text-foreground dark:text-white`}
                     >
                         0{index + 1}
@@ -116,8 +116,8 @@ function MenuItem({
                     {/* Label */}
                     <span
                         className={`font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight transition-colors duration-200 ${isActive
-                                ? "text-foreground dark:text-white"
-                                : "text-foreground/70 dark:text-white/70 group-hover:text-foreground dark:group-hover:text-white"
+                            ? "text-foreground dark:text-white"
+                            : "text-foreground/70 dark:text-white/70 group-hover:text-foreground dark:group-hover:text-white"
                             }`}
                     >
                         {item.label}
@@ -169,6 +169,25 @@ export default function HamburgerMenu() {
     const { resolvedTheme } = useTheme();
     const isDark = resolvedTheme === "dark";
 
+    // Lock body scroll when menu is open (fixes Safari mobile scroll-behind)
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+            // Prevent iOS Safari bounce-scroll
+            document.body.style.position = 'fixed';
+            document.body.style.inset = '0';
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.inset = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.inset = '';
+        };
+    }, [isOpen]);
+
     const toggleMenu = useCallback(() => {
         setIsOpen((prev) => !prev);
         setHoveredIndex(null);
@@ -195,19 +214,14 @@ export default function HamburgerMenu() {
         <>
             {/* Toggle Button */}
             <motion.button
-                className="fixed top-5 right-5 md:top-8 md:right-8 z-[60] flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-border/40 bg-background/80 backdrop-blur-xl text-foreground shadow-lg hover:shadow-xl transition-shadow"
+                className={`fixed top-5 right-5 md:top-8 md:right-8 z-[60] flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-border/40 backdrop-blur-xl text-foreground shadow-lg hover:shadow-xl transition-all duration-300 ${isOpen
+                        ? "bg-foreground/[0.06] dark:bg-white/10"
+                        : "bg-background/80"
+                    }`}
                 onClick={toggleMenu}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label={isOpen ? "Close menu" : "Open menu"}
-                animate={{
-                    backgroundColor: isOpen
-                        ? isDark
-                            ? "rgba(255,255,255,0.1)"
-                            : "rgba(0,0,0,0.06)"
-                        : undefined,
-                }}
-                transition={{ duration: 0.3 }}
             >
                 <HamburgerIcon isOpen={isOpen} />
             </motion.button>
@@ -216,14 +230,15 @@ export default function HamburgerMenu() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className="fixed inset-0 z-50 flex flex-col"
+                        className="fixed inset-0 z-50 flex flex-col transform-gpu"
+                        style={{ touchAction: 'none', WebkitOverflowScrolling: 'auto' }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4, ease }}
                     >
-                        {/* Background */}
-                        <div className="absolute inset-0 bg-background/95 dark:bg-black/95 backdrop-blur-2xl" />
+                        {/* Background — solid bg instead of backdrop-blur for Safari mobile compatibility */}
+                        <div className="absolute inset-0 bg-background dark:bg-black" />
 
                         {/* Gradient orbs (CSS only, no Three.js) */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
