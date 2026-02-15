@@ -1,5 +1,7 @@
 "use client";
 
+import { sendGAEvent } from "@/lib/analytics";
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -81,6 +83,11 @@ export default function WhatsAppWidget() {
                   size="sm"
                   className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/35"
                   onClick={() => {
+                    sendGAEvent({
+                      action: 'whatsapp_click',
+                      category: 'Contact',
+                      label: 'Call me',
+                    });
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I'd like to connect over a call to discuss my project.")}`;
                     window.open(whatsappUrl, "_blank");
                     setIsOpen(false);
@@ -94,6 +101,11 @@ export default function WhatsAppWidget() {
                   size="sm"
                   className="text-xs h-8 rounded-full flex-1 sm:flex-none border-primary/35"
                   onClick={() => {
+                    sendGAEvent({
+                      action: 'whatsapp_click',
+                      category: 'Contact',
+                      label: 'I want to know more',
+                    });
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent("Hi, I'd like to connect with you.")}`;
                     window.open(whatsappUrl, "_blank");
                     setIsOpen(false);

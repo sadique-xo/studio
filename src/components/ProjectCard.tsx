@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Project } from '@/lib/types';
@@ -5,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 import { ArrowRight } from 'lucide-react';
+import { sendGAEvent } from '@/lib/analytics';
 
 interface ProjectCardProps {
   project: Project;
@@ -13,12 +16,24 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, fullWidth = false }: ProjectCardProps) {
 
+  const handleProjectClick = () => {
+    sendGAEvent({
+      action: 'project_click',
+      category: 'Project',
+      label: project.title,
+    });
+  };
+
   return (
     <Card className={cn(
-        "group relative flex flex-col overflow-hidden text-foreground border border-border/35 squircle-lg bg-card",
-        fullWidth ? "md:col-span-2" : "md:col-span-1"
+      "group relative flex flex-col overflow-hidden text-foreground border border-border/35 squircle-lg bg-card",
+      fullWidth ? "md:col-span-2" : "md:col-span-1"
     )}>
-      <Link href={`/projects/${project.slug}`} className="absolute inset-0">
+      <Link
+        href={`/projects/${project.slug}`}
+        className="absolute inset-0"
+        onClick={handleProjectClick}
+      >
         <Image
           src={project.coverImage}
           alt={project.title}
@@ -35,11 +50,12 @@ export default function ProjectCard({ project, fullWidth = false }: ProjectCardP
           variant="default"
           asChild
           className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
+          onClick={handleProjectClick}
         >
-            <Link href={`/projects/${project.slug}`} className="flex items-center gap-2">
-              <ArrowRight className="h-4 w-4" />
-              View Project
-            </Link>
+          <Link href={`/projects/${project.slug}`} className="flex items-center gap-2">
+            <ArrowRight className="h-4 w-4" />
+            View Project
+          </Link>
         </Button>
       </CardContent>
     </Card>

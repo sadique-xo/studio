@@ -1,7 +1,13 @@
 import type { Metadata, Viewport } from 'next';
 import { Toaster } from "@/components/ui/toaster";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from '@/components/navbar';
+import HamburgerMenu from '@/components/HamburgerMenu';
+import Footer from '@/components/layout/Footer';
+import AvatarVideoSection from '@/components/sections/AvatarVideoSection';
 
 import BookingCtaSection from '@/components/sections/BookingCtaSection';
 import './globals.css';
@@ -295,14 +301,19 @@ export default function RootLayout({
                   {children}
                 </main>
                 <BookingCtaSection />
-
+                <AvatarVideoSection />
+                <Footer />
               </div>
+              <HamburgerMenu />
               <Navbar />
               <WhatsAppWidget />
               <Toaster />
             </PageTransitionProvider>
           </TooltipProvider>
         </ThemeProvider>
+        <SpeedInsights />
+        <Analytics />
+        <GoogleAnalytics />
       </body>
     </html>
   );

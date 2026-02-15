@@ -1,5 +1,7 @@
 "use client";
 
+import { sendGAEvent } from "@/lib/analytics";
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -43,9 +45,15 @@ export default function ContactForm() {
     // Here you would typically call a server action
     // await submitContactForm(values);
     console.log("Form submitted:", values);
-    
+
     // Simulate server action
     await new Promise(resolve => setTimeout(resolve, 1000));
+
+    sendGAEvent({
+      action: 'contact_form_submit',
+      category: 'Contact',
+      label: 'Contact Form',
+    });
 
     toast({
       title: "Message Sent!",
