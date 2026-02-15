@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react"
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from '@/components/navbar';
+import HamburgerMenu from '@/components/HamburgerMenu';
 import Footer from '@/components/layout/Footer';
 import AvatarVideoSection from '@/components/sections/AvatarVideoSection';
 
@@ -303,6 +304,7 @@ export default function RootLayout({
                 <AvatarVideoSection />
                 <Footer />
               </div>
+              <HamburgerMenu />
               <Navbar />
               <WhatsAppWidget />
               <Toaster />
