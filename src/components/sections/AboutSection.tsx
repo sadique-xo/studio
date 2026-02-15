@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { Search, Grid3X3, Infinity, Send, Palette, Code, Music, CheckCircle, Github, Linkedin, Twitter, Dribbble } from 'lucide-react';
+import { Search, Grid3X3, Infinity, Code, CheckCircle, Github, Linkedin, Twitter, Dribbble } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function AboutSection() {
@@ -13,14 +13,7 @@ export default function AboutSection() {
     { icon: Code, label: 'Development' }
   ];
 
-  const designStack = [
-    { icon: Palette, label: 'Figma' },
-    { icon: Code, label: 'VS Code' },
-    { icon: Music, label: 'Spotify' },
-    { icon: Infinity, label: 'Design' },
-    { icon: Grid3X3, label: 'Grid' },
-    { icon: Send, label: 'Deploy' }
-  ];
+
 
   const [goals, setGoals] = useState([
     { text: 'Travel to Himachal Pradesh this year', completed: true },
@@ -155,17 +148,31 @@ export default function AboutSection() {
 
         {/* Additional Cards Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-8">
-          {/* Design Stack Card */}
+          {/* Tech Stack Card */}
           <Card className="bg-card shadow-lg rounded-2xl p-6 h-75 border border-border/35">
             <CardContent className="p-0 h-full flex flex-col">
               <div className="text-left flex-1">
-                <h3 className="font-bold text-card-foreground text-lg mb-1">Design stack</h3>
-                <p className="text-muted-foreground text-sm mb-4">A mix of pixels, planning, and playlists.</p>
+                <h3 className="font-bold text-card-foreground text-lg mb-1">Tech Stack</h3>
+                <p className="text-muted-foreground text-sm mb-4">The tools that power my workflow.</p>
                 <div className="grid grid-cols-3 gap-3 mb-4">
-                  {designStack.map((item, index) => (
-                    <div key={index} className="flex flex-col items-center p-2 bg-muted rounded-lg">
-                      <item.icon className="w-5 h-5 text-muted-foreground mb-1" />
-                      <span className="text-xs text-muted-foreground">{item.label}</span>
+                  {[
+                    { src: '/tech_stack/figma.webp', label: 'Figma' },
+                    { src: '/tech_stack/Notion_app_logo.png', label: 'Notion' },
+                    { src: '/tech_stack/claude.webp', label: 'Claude' },
+                    { src: '/tech_stack/cursor.png', label: 'Cursor' },
+                    { src: '/tech_stack/vercel-icon.svg', label: 'Vercel' },
+                    { src: '/tech_stack/render.png', label: 'Render' }
+                  ].map((item, index) => (
+                    <div key={index} className="flex flex-col items-center justify-center p-3 bg-zinc-100 dark:bg-zinc-800/50 rounded-xl hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors duration-200 group">
+                      <div className="relative w-8 h-8 mb-2 transition-transform duration-200 group-hover:scale-110">
+                        <Image
+                          src={item.src}
+                          alt={item.label}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors">{item.label}</span>
                     </div>
                   ))}
                 </div>

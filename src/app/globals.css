@@ -100,90 +100,88 @@ h6 {
   .no-dots-background {
     background-color: hsl(var(--background));
   }
-  
+
   .process-card {
     background-color: hsl(var(--card));
     color: hsl(var(--card-foreground));
   }
-  
+
   .dark .process-card {
     background-color: hsl(var(--muted));
     color: hsl(var(--muted-foreground));
   }
-  
+
   .profile-badge {
     background-color: hsl(var(--card));
     color: hsl(var(--foreground));
     border: 1px solid hsl(var(--border));
   }
-  
+
   .dark .profile-badge {
     background-color: hsl(var(--muted));
     color: hsl(var(--muted-foreground));
     border: 1px solid hsl(var(--border));
   }
-  
+
   .social-icon {
     background-color: hsl(var(--card));
     color: hsl(var(--foreground));
     border: 1px solid hsl(var(--border));
   }
-  
+
   .dark .social-icon {
     background-color: hsl(var(--muted));
     color: hsl(var(--muted-foreground));
     border: 1px solid hsl(var(--border));
   }
-  
+
   .social-icon:hover {
     background-color: hsl(var(--secondary));
     color: hsl(var(--secondary-foreground));
   }
-  
+
   .dark .social-icon:hover {
     background-color: hsl(var(--secondary));
     color: hsl(var(--secondary-foreground));
   }
-  
+
   /* Clean, subtle squircle utilities */
   .squircle {
     border-radius: 12px;
     clip-path: inset(0 round 12px);
   }
-  
+
   .squircle-sm {
     border-radius: 8px;
     clip-path: inset(0 round 8px);
   }
-  
+
   .squircle-md {
     border-radius: 16px;
     clip-path: inset(0 round 16px);
   }
-  
+
   .squircle-lg {
     border-radius: 20px;
     clip-path: inset(0 round 20px);
   }
-  
+
   .squircle-xl {
     border-radius: 24px;
     clip-path: inset(0 round 24px);
   }
-  
+
   /* Top and bottom squircle variants */
   .squircle-t-lg {
     border-radius: 20px 20px 0 0;
     clip-path: inset(0 round 20px 20px 0 0);
   }
-  
+
   .squircle-b-lg {
     border-radius: 0 0 20px 20px;
     clip-path: inset(0 round 0 0 20px 20px);
   }
 }
-
-
 
 @layer base {
   * {
@@ -192,4 +190,9 @@ h6 {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
 }
