@@ -32,10 +32,10 @@ export default function AuditBanner() {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-                    className="overflow-hidden"
+                    className="overflow-hidden relative z-[55] hidden md:block"
                 >
                     <div className="relative bg-gradient-to-r from-primary/90 via-primary to-primary/90 text-primary-foreground">
-                        <div className="container mx-auto px-4 py-2.5 flex items-center justify-center gap-3 text-sm">
+                        <div className="container mx-auto px-4 pr-14 md:pr-4 py-2.5 flex items-center justify-center gap-3 text-sm">
                             <Sparkles className="w-4 h-4 shrink-0 animate-pulse" />
                             <span className="font-medium">
                                 Get a <span className="font-bold underline underline-offset-2 decoration-primary-foreground/40">free website audit</span> — let&apos;s find what&apos;s holding your site back

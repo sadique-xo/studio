@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -169,6 +169,25 @@ export default function HamburgerMenu() {
     const { resolvedTheme } = useTheme();
     const isDark = resolvedTheme === "dark";
 
+    // Lock body scroll when menu is open (fixes Safari mobile scroll-behind)
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+            // Prevent iOS Safari bounce-scroll
+            document.body.style.position = 'fixed';
+            document.body.style.inset = '0';
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.inset = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.inset = '';
+        };
+    }, [isOpen]);
+
     const toggleMenu = useCallback(() => {
         setIsOpen((prev) => !prev);
         setHoveredIndex(null);
@@ -211,14 +230,15 @@ export default function HamburgerMenu() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className="fixed inset-0 z-50 flex flex-col"
+                        className="fixed inset-0 z-50 flex flex-col transform-gpu"
+                        style={{ touchAction: 'none', WebkitOverflowScrolling: 'auto' }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.4, ease }}
                     >
-                        {/* Background */}
-                        <div className="absolute inset-0 bg-background/95 dark:bg-black/95 backdrop-blur-2xl" />
+                        {/* Background — solid bg instead of backdrop-blur for Safari mobile compatibility */}
+                        <div className="absolute inset-0 bg-background dark:bg-black" />
 
                         {/* Gradient orbs (CSS only, no Three.js) */}
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
